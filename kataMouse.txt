@@ -1,0 +1,3 @@
+library: arduino mouse
+component in muis: optoslot (IR)
+zuignappen voor tegen het wegschuiven
