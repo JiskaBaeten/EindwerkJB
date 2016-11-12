@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 	private int count;
 	public Text countText;
 	public Text winText;
-	public Vector3 ballSize;
+	private Vector3 ballSize;
 	private Vector3 upSize;
 	public GameObject collector;
 	public List<GameObject> pickupArray = new List<GameObject>();
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if (pickupArray.Count >= 65) {
+		if (pickupArray.Count >= 10) {
 			GameObject removeMe = new GameObject();
 			removeMe = pickupArray[0];
 			pickupArray.RemoveAt(0);
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 			SetGrowthSize(other.transform.localScale);
 			other.gameObject.transform.parent = collector.transform;
 			ballSize = ballSize + upSize;
-			playerRigidBody.transform.localScale = ballSize;
+      playerRigidBody.transform.localScale = ballSize;
 			count++;
 			SetCountText();
 		}
@@ -59,5 +59,10 @@ public class PlayerController : MonoBehaviour {
 		upSize.x = (min / ballSize.x) / 8;
 		upSize.y = (min / ballSize.y) / 8;
 		upSize.z = (min / ballSize.z) / 8;
-	}
+  }
+
+  public Vector3 SizeBall //to use the size of the ball in other scripts
+  {
+     get { return ballSize; }
+  }
 }
