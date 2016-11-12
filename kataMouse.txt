@@ -1,3 +1,4 @@
 library: arduino mouse
 component in muis: optoslot (IR)
 zuignappen voor tegen het wegschuiven
+stok door bal steken
