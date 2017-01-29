@@ -7,7 +7,7 @@ or animated (moving, caught)
 -catOrange
 -dog
 -Dungbeetle (work in progess)
--FlatparkBench
+-FlatparkBench (done)
 -fountain
 -klimrek (work in progess)
 -monkeybars
