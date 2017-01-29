@@ -8,4 +8,5 @@ NOTES!!!
 > keep it on the pickup_holder > pickups visible after picking up, but no rigidbody or collider on them so it looks weird
 > can't slowly zoom out? and zoom out doesn't work right now
 
-> don't forget to roll or jump over stuff!! > roll over > raycasting with antenna's
+> meshcoliders wont work...?
+> growing too fast? (example klimrek) > error in sizegrow Method?

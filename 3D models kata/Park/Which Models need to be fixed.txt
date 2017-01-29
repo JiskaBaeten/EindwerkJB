@@ -1,18 +1,19 @@
 or redone so they look a bit more cartoony
+or animated (moving, caught)
 
--ant
+-ant (still have to animate)
 -bigswing
 -bridge
 -catOrange
 -dog
--Dungbeetle
+-Dungbeetle (work in progess)
 -FlatparkBench
 -fountain
--klimrek
+-klimrek (work in progess)
 -monkeybars
 -parktable
 -pond
 -rabbit
 -slide
 -snail
--wip (working on)
+-wip/seesaw (Done)

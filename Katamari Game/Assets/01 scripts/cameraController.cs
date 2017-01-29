@@ -30,26 +30,40 @@ public class cameraController : MonoBehaviour
   void Update()
   {
     ballSize = pc.SizeBall; //must be updated
-    Debug.Log("cc" +ballSize);
-    if (ballSize.x % 2 == 0 && ballSize.x != 1)
-    {
-      ZoomOut();
-    }
+    Debug.Log("cc" + ballSize);
+    /*  if (ballSize.x % 2 == 0 && ballSize.x != 1)
+      {
+        ZoomOut();
+      }*/
   }
 
   void LateUpdate()
   {
     //turn around the Y-axis
-    offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
+    offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset; //if input is mouse
+
+    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) //if input from arrows
+    {
+      offset = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * turnSpeed, Vector3.up) * offset;
+    }
+
+    if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Keypad6)) //if input from numkeys
+    {
+      if (Input.GetKey(KeyCode.Keypad4)) //turn left
+      { offset = Quaternion.AngleAxis(-turnSpeed, Vector3.up) * offset; }
+      else if (Input.GetKey(KeyCode.Keypad6)) //turn right
+      { offset = Quaternion.AngleAxis(turnSpeed, Vector3.up) * offset; }
+    }
+
     transform.position = player.position + offset;
     transform.LookAt(player.position); //keep on looking where the player is
   }
 
-   public void ZoomOut()
-   {
+  public void ZoomOut()
+  {
     //if ball gets too big for camera
-    offset += Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) *  new Vector3(player.position.x, player.position.y + offsetY + offsetZoomOut, player.position.z + offsetZ + offsetZoomOut);
+    offset += Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * new Vector3(player.position.x, player.position.y + offsetY + offsetZoomOut, player.position.z + offsetZ + offsetZoomOut);
 
     transform.position = player.position + offset;
-   }
+  }
 }
