@@ -2,7 +2,7 @@ or redone so they look a bit more cartoony
 or animated (moving, caught)
 
 -ant (still have to animate)
--bigswing
+-bigswing (animate?)
 -bridge
 -catOrange
 -dog
@@ -11,9 +11,10 @@ or animated (moving, caught)
 -fountain
 -klimrek (work in progess)
 -monkeybars
--parktable
+-parktable (Done)
 -pond
 -rabbit
 -slide
 -snail
+-soccerbal (Done)
 -wip/seesaw (Done)
