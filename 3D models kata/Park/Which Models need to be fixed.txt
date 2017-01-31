@@ -3,18 +3,24 @@ or animated (moving, caught)
 
 -ant (still have to animate)
 -bigswing (animate?)
--bridge
+-bridge (Done)
 -catOrange
 -dog
 -Dungbeetle (work in progess)
--FlatparkBench (done)
--fountain
+-FlatparkBench (Done)
+-fountain (Done)
 -klimrek (work in progess)
--monkeybars
+-monkeybars (Done)
 -parktable (Done)
--pond
+-pond (work in progress) *
 -rabbit
--slide
+-slide *
 -snail
 -soccerbal (Done)
 -wip/seesaw (Done)
+
+-soccerGoals -> start it!!!
+
+5,6 cm = 164,706 m rivierenhof vijver
+
+* Do These today
