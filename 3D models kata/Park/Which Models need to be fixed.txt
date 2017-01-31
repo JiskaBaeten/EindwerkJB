@@ -1,26 +1,30 @@
 or redone so they look a bit more cartoony
 or animated (moving, caught)
 
+
+D -bridge 
+D -FlatparkBench 
+D -fountain
+D -monkeybars
+D -parktable 
+D -slide 
+D -soccerbal
+D -wip/seesaw
+D -soccerGoal
+
 -ant (still have to animate)
 -bigswing (animate?)
--bridge (Done)
 -catOrange
 -dog
--Dungbeetle (work in progess)
--FlatparkBench (Done)
--fountain (Done)
--klimrek (work in progess)
--monkeybars (Done)
--parktable (Done)
--pond (work in progress) *
+WIP -Dungbeetle 
+WIP -klimrek
+WIP -pond 
 -rabbit
--slide *
 -snail
--soccerbal (Done)
--wip/seesaw (Done)
-
--soccerGoals -> start it!!!
 
 5,6 cm = 164,706 m rivierenhof vijver
 
 * Do These today
+
+D = done
+wip = work in progress
