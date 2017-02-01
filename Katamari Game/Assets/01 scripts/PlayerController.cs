@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+//somethings wrong with connector -> doesn't seem to destroy any object?
 
 public class PlayerController : MonoBehaviour {
 	public Rigidbody playerRigidBody;

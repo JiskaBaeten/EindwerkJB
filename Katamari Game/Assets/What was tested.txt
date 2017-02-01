@@ -7,6 +7,8 @@ NOTES!!!
 > script attachPickup to player? > picked up items disappear but player sizes anyway
 > keep it on the pickup_holder > pickups visible after picking up, but no rigidbody or collider on them so it looks weird
 > can't slowly zoom out? and zoom out doesn't work right now
+> mesh colliders need to be convex to be triggered
 
-> meshcoliders wont work...?
+> not deleting good after 10 objects?
 > growing too fast? (example klimrek) > error in sizegrow Method?
+> outline on everything smaller than you (pickupobject)
