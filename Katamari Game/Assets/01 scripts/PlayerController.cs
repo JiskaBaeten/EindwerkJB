@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-//somethings wrong with connector -> doesn't seem to destroy any object?
 
 public class PlayerController : MonoBehaviour {
 	public Rigidbody playerRigidBody;
@@ -13,25 +12,12 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 upSize;
 	public GameObject collector;
 	public List<GameObject> pickupArray = new List<GameObject>();
-  private byte pickUpsShowing = 10;
+  private byte pickUpsShowing = 10; //limits how many objects that stay visible on the ball
+  private byte growSize = 6; //so it grows not too fast (1/3 of the object in every direction)
 
 	void Start() {
 		ballSize = playerRigidBody.transform.localScale;
 		SetSizeText();
-	}
-
-	void FixedUpdate()
-	{
-    //shows max 10 items on the ball and destroys the oldest one
-		if (pickupArray.Count >= pickUpsShowing) {
-			GameObject removeMe = new GameObject();
-			removeMe = pickupArray[0];
-			pickupArray.RemoveAt(0);
-			Destroy(removeMe);
-		}
-	}
-
-	void Update() {
 	}
 
 	void OnTriggerEnter(Collider pickup) {
@@ -39,6 +25,8 @@ public class PlayerController : MonoBehaviour {
       pickup.gameObject.GetComponent<Collider>().isTrigger = false;
       pickup.gameObject.GetComponent<Collider>().enabled = false;
 			pickupArray.Add(pickup.gameObject);
+
+      LimitShownObjects();
 
 			SetGrowthSize(pickup.transform.localScale);
       pickup.gameObject.transform.parent = collector.transform;
@@ -53,15 +41,23 @@ public class PlayerController : MonoBehaviour {
 		SizeText.text = "Size: " + ballSize.x.ToString ();
 	}
 
-	void SetGrowthSize(Vector3 pickup) { //might be something wrong here
-		float min = new float ();
-		min = Mathf.Min (pickup.x, Mathf.Min (pickup.y, pickup.z)); //what is this...
-		/*upSize.x = (min / ballSize.x) / 8; //why divided by 8
-		upSize.y = (min / ballSize.y) / 8;
-		upSize.z = (min / ballSize.z) / 8;*/ //set higer to grow less
-    upSize.x = (min / ballSize.x) / 12; 
-    upSize.y = (min / ballSize.y) / 12;
-    upSize.z = (min / ballSize.z) / 12;
+	void SetGrowthSize(Vector3 pickup) {
+		float average = new float ();
+    average = (pickup.x + pickup.y + pickup.z) / 3; 
+
+    upSize.x = (average / ballSize.x) / growSize; 
+    upSize.y = (average / ballSize.y) / growSize;
+    upSize.z = (average / ballSize.z) / growSize;
+  }
+
+  void LimitShownObjects()
+  {
+    //shows max x [see pickUpShowing] items on the ball and destroys the oldest one
+    if (pickupArray.Count > pickUpsShowing)
+    {
+      Destroy(pickupArray[0].gameObject); //destroy oldest
+      pickupArray.RemoveAt(0); //remove null from list
+    }
   }
 
   public Vector3 SizeBall //to use the size of the ball in other scripts
