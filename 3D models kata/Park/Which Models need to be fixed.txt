@@ -11,24 +11,24 @@ D -slide
 D -soccerbal
 D -wip/seesaw
 D -soccerGoal
+D -bigswing
+D -parkfence
 
--ant (still have to animate)
--bigswing (animate?)
+A -ant
 -catOrange
 -dog
 WIP -Dungbeetle 
 WIP -klimrek
 WIP -pond 
--duck
+A -duck
 -rabbit
--snail
 
 -park
 -parkroad
--parkfence
+
 -trees
 -bushes
--streets
+-streets * (one piece)
 -buildings
 -cars
 
@@ -38,3 +38,4 @@ WIP -pond
 
 D = done
 wip = work in progress
+a = animmate this!

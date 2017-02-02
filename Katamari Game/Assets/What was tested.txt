@@ -12,3 +12,6 @@ NOTES!!!
 > not deleting good after 10 objects?
 > growing too fast? (example klimrek) > error in sizegrow Method?
 > outline on everything smaller than you (pickupobject)
+
+
+> Static variables stay even if you change scene?? -> sure about that?
