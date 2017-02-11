@@ -1,0 +1,21 @@
+make list of when to zoomout (numbers of sizes)
+when triggered, delete current number from list, make new number be the next trigger
+
+
+might need coroutine for slowly zooming out since Lerp works per frame and if it's only done once -> no effect
+
+ex:
+ function LerpFoV(fov : float) {
+     // lerping a value in this way may take quite some time to reach the exact target value, so we will just stop lerping when the difference is small enough, i.e 0.05
+     var dif : float = Mathf.Abs(Camera.main.fieldOfView - fov);
+ 
+     while(dif > 0.05) {
+         Mathf.Lerp(Camera.main.fieldOfView, fov, 0.1);
+         // update the difference 
+         dif = Mathf.Abs(Camera.main.fieldOfView - fov);
+         yield;
+     }
+ }
+ 
+ // start the coroutine
+ StartCoroutine(LerpFoV(100));

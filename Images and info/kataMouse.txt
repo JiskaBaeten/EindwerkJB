@@ -2,3 +2,6 @@ library: arduino mouse
 component in muis: optoslot (IR)
 zuignappen voor tegen het wegschuiven
 stok door bal steken
+
+er zijn maar 2 externe interrupts op een arduino (pin 2 en pin 3)
+Je kan wel van de andere pinnen een interrupt maken, maar dat vereist wat code en mssn een extra library
