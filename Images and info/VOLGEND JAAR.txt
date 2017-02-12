@@ -3,6 +3,7 @@
 
 eindwerk:
 *met floppy drives/hard drives muziek maken ==> https://www.youtube.com/watch?v=cL7oFfCX-E0
+https://github.com/SammyIAm/Moppy
 *the witch's house in 3D maken (+rondlopen in first en 3rd person eventueel met oculus)
 *heartbeat monitor --> game rond heartbeat maken (horror?)
 *bestaand tekeningen op een muur laten projecten dmv lazers
