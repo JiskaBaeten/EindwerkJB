@@ -1,7 +1,16 @@
--script movement was tested
--script cameracontroller was tested ==> !!!!!Only zooming out when gets too big!!!
--script Playercontroller should be tested!!!
+*tested:
+-script AttachPickup works
+-script cameracontroller was tested ==> !!!!!Only zooming out offset seems wrong + doesnt go slow
+-script MovePlayer was tested (works with mouse, arrowkeys and numpad)
+-script Playercontroller was tested
+-script Timer works
 
+*not implemented yet:
+-LoadingScreenManager
+-LoadTargetScene
+
+
+-script PickupObject --> check if smaller when button press
 
 NOTES!!!
 > script attachPickup to player? > picked up items disappear but player sizes anyway
@@ -11,7 +20,6 @@ NOTES!!!
 > mesh colliders need to be convex to be triggered -> roll on convex meshes can be a bother (not be able to go under swing, roll on table)
 	suggested fix: multiple layers of colliders (box for colliders to roll on, mesh for) -> works
 
-> not deleting good after 10 objects?
 > growing too fast? (example klimrek) > error in sizegrow Method?
 > outline on everything smaller than you (pickupobject)
 

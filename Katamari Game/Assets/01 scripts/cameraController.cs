@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class cameraController : MonoBehaviour
 {
   //orbit the camera around the player
-  // --> still need to zoom out when you get bigger
+  // --> zoom offset seems wrong
+  //add numbers to zoomnumbers!!!!!
 
   private float turnSpeed = 4.0f;
   public Transform player;
 
-  private Vector3 offset;
+  private Vector3 offset; //STILL NEED TO FINETUNE THESE
   private float offsetY = 0.5f;
   private float offsetZ = 5.0f;
   private float offsetZoomOut = 0.5f;
@@ -18,6 +20,8 @@ public class cameraController : MonoBehaviour
   private PlayerController pc = null;
   private Vector3 ballSize = Vector3.zero;
 
+  private List<float> zoomOutNumbers = new List<float>();
+
   void Start()
   {
     //used to get the size from the ball from the playerController (read only)
@@ -25,16 +29,24 @@ public class cameraController : MonoBehaviour
 
     //beginoffset for the offset
     offset = new Vector3(player.position.x, player.position.y + offsetY, player.position.z + offsetZ);
+
+    //to get all the numbers so the cam knows when to zoom out, TESTS FOR MORE NEEDED
+    zoomOutNumbers.Add(2.0f);
+    zoomOutNumbers.Add(4.0f);
   }
 
   void Update()
   {
     ballSize = pc.SizeBall; //must be updated
-    Debug.Log("cc" + ballSize);
-    /*  if (ballSize.x % 2 == 0 && ballSize.x != 1)
+
+    if (zoomOutNumbers.Count > 0) //only do this when list is not empty
+    {
+      if (zoomOutNumbers[0] <= ballSize.x) //if ball is too big, zoom out
       {
+        zoomOutNumbers.RemoveAt(0); //remove current number
         ZoomOut();
-      }*/
+      }
+    }
   }
 
   void LateUpdate()
@@ -62,7 +74,10 @@ public class cameraController : MonoBehaviour
   public void ZoomOut()
   {
     //if ball gets too big for camera
-    offset += Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * new Vector3(player.position.x, player.position.y + offsetY + offsetZoomOut, player.position.z + offsetZ + offsetZoomOut);
+    //turns weird
+
+    //Mathf.Lerp(Camera.main.fieldOfView, 100, 0.1);
+    offset += new Vector3(player.position.x, player.position.y + offsetY, player.position.z - offsetZ - offsetZoomOut);
 
     transform.position = player.position + offset;
   }
