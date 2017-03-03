@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class cameraController : MonoBehaviour
 {
@@ -37,7 +38,10 @@ public class cameraController : MonoBehaviour
 
   void Update()
   {
-    ballSize = pc.SizeBall; //must be updated
+    if (pc != null)
+    {
+      ballSize = pc.SizeBall; //must be updated
+    }
 
     if (zoomOutNumbers.Count > 0) //only do this when list is not empty
     {

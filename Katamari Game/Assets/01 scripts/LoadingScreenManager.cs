@@ -38,7 +38,7 @@ public class LoadingScreenManager : MonoBehaviour {
 
 	public static int sceneToLoad = -1;
 	// IMPORTANT! This is the build index of your loading scene. You need to change this to match your actual scene index
-	static int loadingSceneIndex = 0;
+	static int loadingSceneIndex = 1;
 
 	public static void LoadScene(int levelNum) {				
 		Application.backgroundLoadingPriority = ThreadPriority.High;
@@ -118,7 +118,7 @@ public class LoadingScreenManager : MonoBehaviour {
 		loadingDoneIcon.gameObject.SetActive(false);
 
 		progressBar.fillAmount = 0f;
-		loadingText.text = "Laden... Even Geduld...";
+		loadingText.text = "Loading...";
 	}
 
 	void ShowCompletionVisuals() {
@@ -126,7 +126,7 @@ public class LoadingScreenManager : MonoBehaviour {
 		loadingDoneIcon.gameObject.SetActive(true);
 
 		progressBar.fillAmount = 1f;
-		loadingText.text = "Geladen!";
+		loadingText.text = "Ready!";
 	}
 
 }

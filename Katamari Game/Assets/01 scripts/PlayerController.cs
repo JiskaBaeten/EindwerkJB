@@ -4,10 +4,11 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 //controls stuff concerning the player (When it touches a trigger, to make the ball grow, limit how many pickups are shown onto the ball...)
+// PUBLIC SPEED???
 public class PlayerController : MonoBehaviour
 {
   public Rigidbody playerRigidBody;
-  public float speed;
+  public float speed; //DOES THIS SPEED DO ANYTHING?
   public Text SizeText;
   public float scaleToCm = 100.0f; //to give the player a realistic number to work with
   private Vector3 ballSize;
