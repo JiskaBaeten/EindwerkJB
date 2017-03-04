@@ -1,0 +1,47 @@
+Dag Jiska,
+
+U heeft goed gekozen: Ik denk dat je zelfs geen diodes nodig hebt voor twee encoders.
+En je reserves zal je precies niet nodig hebben als ik zie in de datasheets hoeveel rotaties die encoder kan doen zonder zijn eigenschappen te verliezen :)
+En de technische tekening staat er bij zodat je gemakkelijk in C4D een model kan tekenen. Kan nuttig zijn om de montage duidelijk te maken of om een houder te printen in 3D en zeker een meerwaarde voor uw eindwerk.
+
+Aansluitingen: let op: pin C is de common en is de middelste pin.
+In de datasheet staat aan iedere A en B een 10K (bruin zwart oranje) naar de voeding van de Arduino: 5V (maar deze kan je ook weglaten dankzij de input-pullups van je Arduino).
+De beide pinnen C aan de GND van de Arduino.
+Pin A van de eerste encoder naar PIN2 voor interrupt 0. PIN2 is INPUT_PULLUP.
+Pin A van de tweede encoder naar PIN3 voor interrupt 1. PIN3 is INPUT_PULLUP.
+In de interruptroutine kies je voor bv FALLING 
+De pinnen B van de encoders gaan respectievelijk bv naar PIN4 en PIN5 als input pullup.
+bv voor de eerste encoder in de setup()
+attachInterrupt(digitalPinToInterrupt(2), ISRRotEncod1, FALLING);
+bv voor de tweede encoder in de setup()
+attachInterrupt(digitalPinToInterrupt(3), ISRRotEncod2, FALLING);
+Je declareert een volatile boolean variabele voor iedere encoder, die op TRUE gezet wordt door de interruptroutine.
+volatile boolean vBlnEncod1 = FALSE;
+bv voor de eerste interruptroutine:
+void ISREncod1(void)
+{
+vBlnEncod1 = TRUE;
+}
+Analoog voor de tweede encoder natuurlijk.
+In de loop() van je programma kijk je geregeld naar die variabele om te zien of er een neergaande flank geweest is en indien wel moet je een long teller optellen of aftellen:
+if(vBlnEncod1)
+{
+vBlnEncod1=FALSE; //reset voor de volgende keer
+//lees hier de pin B om te zien of je moet optellen of aftellen
+if(digitalRead(4))
+{
+teller1++;
+}
+else
+{
+teller1--;
+}
+Serial.print("Encoder 1: ");
+Serial.println(teller1);
+delay(5); //5 ms delay voor de ontdendering van de encoder
+}
+En analoog voor de tweede encoder natuurlijk.
+Ik tik dit hier maar zonder getest te hebben natuurlijk. Ik heb zo geen encoder liggen. Maar jij kan dat nu goed testen natuurlijk en laat maar weten als er nog probleempjes zouden zijn of als 't werkt ook.
+
+Groetjes,
+Wim
