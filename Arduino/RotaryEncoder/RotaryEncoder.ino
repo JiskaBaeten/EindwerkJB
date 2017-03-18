@@ -75,6 +75,7 @@ void loop()
       Serial.print("Encoder 2: ");
       Serial.println(teller2);
       delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
+  }
 }
 
 

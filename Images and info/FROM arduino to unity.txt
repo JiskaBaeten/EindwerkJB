@@ -1,0 +1,4 @@
+1. import the serialcomm.unitypackage
+2. look at MessageReadWrite.cs for code > schrijf hier jouw code
+3. import MessageListener.cs voor de zekerheid
+4. plak SerialController.cs aan een leeg object
