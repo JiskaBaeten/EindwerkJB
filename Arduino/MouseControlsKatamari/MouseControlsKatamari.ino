@@ -2,6 +2,7 @@
 //for mouse input
 const int xAxis = A1;         //analog sensor for X axis  
 const int yAxis = A2;         // analog sensor for Y axis
+//WAARSCHIJNLIJK ONBRUIKBAAR -> GEBRUIK CODE VAN PROJECT 3 IVM SERIAL COM INPUT
 
 int range = 12;               // output range of X or Y movement
 int responseDelay = 2;       // response delay of the mouse, in ms

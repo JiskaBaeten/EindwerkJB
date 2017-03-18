@@ -15,6 +15,7 @@
 volatile boolean BOOLROTPIN1A = false; 
 volatile boolean BOOLROTPIN2A = false;
 
+//NIET NODIG
 volatile boolean BOOLROTPIN1B = false;
 volatile boolean BOOLROTPIN2B = false;
 
@@ -34,9 +35,6 @@ void setup() {
   //klaarmaken van interrupts
   attachInterrupt(digitalPinToInterrupt(ROTARYINPUTPIN1A), ISRRotEncod1A, FALLING);
   attachInterrupt(digitalPinToInterrupt(ROTARYINPUTPIN2A), ISRRotEncod2A, FALLING);
-
-  attachInterrupt(digitalPinToInterrupt(ROTARYINPUTPIN1B), ISRRotEncod1B, FALLING); 
-  attachInterrupt(digitalPinToInterrupt(ROTARYINPUTPIN2B), ISRRotEncod2B, FALLING);
 }
 
 void loop()
@@ -47,7 +45,7 @@ void loop()
     BOOLROTPIN1A=false; //reset voor de volgende keer
     //lees hier de pin 1B om te zien of je moet optellen of aftellen
     //Linksom is positief, rechtsom is negatief
-    if(digitalRead(ROTARYINPUTPIN1B))
+    if(digitalRead(ROTARYINPUTPIN1B)) //meet of pin 1B hoog of laag is
     {
       teller1++;
     }
@@ -66,7 +64,7 @@ void loop()
     BOOLROTPIN2A=false; //reset voor de volgende keer
     //lees hier de pin 2B om te zien of je moet optellen of aftellen
     //Linksom is positief, rechtsom is negatief
-    if(digitalRead(ROTARYINPUTPIN2B))
+    if(digitalRead(ROTARYINPUTPIN2B)) //meet of pin 2B hoog of laag is
     {
       teller2++;
     }
@@ -77,46 +75,9 @@ void loop()
       Serial.print("Encoder 2: ");
       Serial.println(teller2);
       delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
-
- /* //werkt perfect zonder dit stuk code... 
-  * if(BOOLROTPIN1B) //moet het analogRead zijn?? (analog geeft 0 - 1023 terug)
-   {
-    BOOLROTPIN1B=false; //reset voor de volgende keer
-    //lees hier de pin 1A om te zien of je moet optellen of aftellen
-    if(digitalRead(ROTARYINPUTPIN1A)) 
-    {
-      teller1++;
-    }
-    else
-    {
-      teller1--;
-    }
-      Serial.print("Encoder 1: ");
-      Serial.println(teller1);
-      delay(5); //5 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar)
-    }
-
-   if(BOOLROTPIN2B) 
-   {
-    BOOLROTPIN2B=false; //reset voor de volgende keer
-    //lees hier de pin 2A om te zien of je moet optellen of aftellen
-    if(digitalRead(ROTARYINPUTPIN2A))
-    {
-      teller2++;
-    }
-    else
-    {
-      teller2--;
-    }
-      Serial.print("Encoder 2: ");
-      Serial.println(teller2);
-      delay(5); //5 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar)
-    }*/
 }
 
 
 //INTERRUPTS (interrupt als blokgolf FALLING wordt)
 void ISRRotEncod1A(void){ BOOLROTPIN1A = true; } 
 void ISRRotEncod2A(void){ BOOLROTPIN2A = true; }
-void ISRRotEncod1B(void){ BOOLROTPIN1B = true; }
-void ISRRotEncod2B(void){ BOOLROTPIN2B = true; }
