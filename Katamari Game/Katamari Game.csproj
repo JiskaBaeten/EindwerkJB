@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\01 scripts\AttachPickup.cs" />
+    <Compile Include="Assets\01 scripts\HideMouseCursor.cs" />
     <Compile Include="Assets\01 scripts\LoadingScreenManager.cs" />
     <Compile Include="Assets\01 scripts\MenuPlayerController.cs" />
     <Compile Include="Assets\01 scripts\MovePlayer.cs" />

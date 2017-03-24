@@ -12,7 +12,7 @@ public class cameraController : MonoBehaviour
   private float turnSpeed = 4.0f;
   public Transform player;
 
-  private Vector3 offset; //STILL NEED TO FINETUNE THESE
+  private Vector3 offset; //STILL NEED TO FINETUNE THESE ******
   private float offsetY = 0.5f;
   private float offsetZ = 5.0f;
   private float offsetZoomOut = 0.5f;
@@ -36,7 +36,7 @@ public class cameraController : MonoBehaviour
     //beginoffset for the offset
     offset = new Vector3(player.position.x, player.position.y + offsetY, player.position.z + offsetZ);
 
-    //to get all the numbers so the cam knows when to zoom out, TESTS FOR MORE NEEDED
+    //****to get all the numbers so the cam knows when to zoom out, TESTS FOR MORE NEEDED *****
     zoomOutNumbers.Add(2.0f);
     zoomOutNumbers.Add(4.0f);
   }
@@ -70,16 +70,14 @@ public class cameraController : MonoBehaviour
 
     if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Keypad6)) //if input from numkeys
     {
-      if (Input.GetKey(KeyCode.Keypad4)) { TurnLeft(); }
-      else if (Input.GetKey(KeyCode.Keypad6)) { TurnRight(); }
+      if (Input.GetKey(KeyCode.Keypad4)) { TurnLeft("keyPad"); }
+      else if (Input.GetKey(KeyCode.Keypad6)) { TurnRight("keyPad"); }
     }
 
     if (arduinoScript != null) //when the script was found
     { //input from arduino
-
-      //*****DEES WERKT NIET
-      if (arduinoScript.enc2TurnLeft == true) { TurnLeft(); arduinoScript.enc2TurnLeft = null; }
-      else if (arduinoScript.enc2TurnLeft == false) { TurnRight(); arduinoScript.enc2TurnLeft = null; }
+      if (arduinoScript.enc2TurnLeft == true) { TurnLeft("arduino"); }
+      else if (arduinoScript.enc2TurnLeft == false) { TurnRight("arduino"); }
       else { }; //when bool = null
     }
 
@@ -88,8 +86,35 @@ public class cameraController : MonoBehaviour
   }
 
   //used for numpadkeys and arduino
-  void TurnLeft() { offset = Quaternion.AngleAxis(-turnSpeed, Vector3.up) * offset; }
-  void TurnRight() { offset = Quaternion.AngleAxis(turnSpeed, Vector3.up) * offset; }
+  void TurnLeft(string whichInput)
+  {
+    float extraSpeed = 1f;
+
+    if (whichInput == "arduino")
+    {
+      arduinoScript.enc2TurnLeft = null; //to make sure that the bool is reset
+      extraSpeed = 5f;
+    }
+    else if (whichInput == "keyPad") //input is keypad
+    { extraSpeed = 1f; }
+
+    offset = Quaternion.AngleAxis(-turnSpeed * extraSpeed, Vector3.up) * offset;
+  }
+
+  void TurnRight(string whichInput)
+  {
+    float extraSpeed = 1f;
+
+    if (whichInput == "arduino")
+    {
+      arduinoScript.enc2TurnLeft = null; //to make sure that the bool is reset
+      extraSpeed = 5f;
+    }
+    else if (whichInput == "keyPad") //input is keypad
+    { extraSpeed = 1f; }
+
+    offset = Quaternion.AngleAxis(turnSpeed * extraSpeed, Vector3.up) * offset;
+  }
 
   public void ZoomOut()
   {

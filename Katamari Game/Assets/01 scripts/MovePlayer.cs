@@ -33,8 +33,8 @@ public class MovePlayer : MonoBehaviour
 
     if (arduinoScript != null) //when the script was found
     { //input from arduino
-      if (arduinoScript.enc1TurnLeft == true) { MoveForward("arduino"); arduinoScript.enc1TurnLeft = null; }
-      else if (arduinoScript.enc1TurnLeft == false) { MoveBackward("arduino"); arduinoScript.enc1TurnLeft = null; }
+      if (arduinoScript.enc1TurnLeft == true) { MoveForward("arduino");  }
+      else if (arduinoScript.enc1TurnLeft == false) { MoveBackward("arduino"); }
       else { } //when null (since it's a nullable bool, do nothing
     }
   }
@@ -44,7 +44,10 @@ public class MovePlayer : MonoBehaviour
     float extraSpeed = 1f;
 
     if (whichInput == "arduino")
-    { extraSpeed = 10f; }
+    {
+      extraSpeed = 10f;
+      arduinoScript.enc1TurnLeft = null; //to make sure that the bool is reset
+    }
     else if (whichInput == "other") //if it's not arduino
     { extraSpeed = 1.5f; }
 
@@ -56,7 +59,10 @@ public class MovePlayer : MonoBehaviour
     float extraSpeed = 1f;
 
     if (whichInput == "arduino")
-    { extraSpeed = 5f; }
+    {
+      arduinoScript.enc1TurnLeft = null; //to make sure that the bool is reset
+      extraSpeed = 5f;
+    }
     else if (whichInput == "other") //if it's not arduino
     { extraSpeed = 1f; }
 

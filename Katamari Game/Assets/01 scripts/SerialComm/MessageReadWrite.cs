@@ -2,19 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 
-//script used to send and read messages from and to the arduino
-//****CHECK IF WORKS****///
+//script used to send and read messages from the arduino
 public class MessageReadWrite : MonoBehaviour
 {
   public SerialController serialController;
   private string recievedData;
 
-  public long oldNumberEnc1 = 0;
-  public long oldNumberEnc2 = 0;
-  public long newNumber;
+  private long oldNumberEnc1 = 0;
+  private long oldNumberEnc2 = 0;
+  private long newNumber;
 
-  private const string enc1 = "Encoder1: ";
-  private const string enc2 = "Encoder2: ";
+  private const string enc1 = "Encoder1: "; //same string as used in arduino script
+  private const string enc2 = "Encoder2: "; //same string as used in arduino script
 
   public bool? enc1TurnLeft = null; //made nullable for when it has no input
   public bool? enc2TurnLeft = null; //made nullable for when it has no input
@@ -46,9 +45,6 @@ public class MessageReadWrite : MonoBehaviour
       Debug.Log("Connection attempt failed or disconnection detected");
     else
       Debug.Log("Message arrived: " + recievedData);
-
-  //  enc1TurnLeft = null; //turn to null when done
-   // enc2TurnLeft = null; //turn to null when done
   }
 
   void CheckLeftOrRight(string whichEncoder)
