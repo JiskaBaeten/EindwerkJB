@@ -23,8 +23,13 @@ public class cameraController : MonoBehaviour
 
   private List<float> zoomOutNumbers = new List<float>();
 
+  private MessageReadWrite arduinoScript = null;
+  private string serialReadWriteTag = "serialReadWrite";
+
   void Start()
   {
+    arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for aruinoscript
+
     //used to get the size from the ball from the playerController (read only)
     pc = player.GetComponent<PlayerController>();
 
@@ -65,15 +70,26 @@ public class cameraController : MonoBehaviour
 
     if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Keypad6)) //if input from numkeys
     {
-      if (Input.GetKey(KeyCode.Keypad4)) //turn left
-      { offset = Quaternion.AngleAxis(-turnSpeed, Vector3.up) * offset; }
-      else if (Input.GetKey(KeyCode.Keypad6)) //turn right
-      { offset = Quaternion.AngleAxis(turnSpeed, Vector3.up) * offset; }
+      if (Input.GetKey(KeyCode.Keypad4)) { TurnLeft(); }
+      else if (Input.GetKey(KeyCode.Keypad6)) { TurnRight(); }
+    }
+
+    if (arduinoScript != null) //when the script was found
+    { //input from arduino
+
+      //*****DEES WERKT NIET
+      if (arduinoScript.enc2TurnLeft == true) { TurnLeft(); arduinoScript.enc2TurnLeft = null; }
+      else if (arduinoScript.enc2TurnLeft == false) { TurnRight(); arduinoScript.enc2TurnLeft = null; }
+      else { }; //when bool = null
     }
 
     transform.position = player.position + offset;
     transform.LookAt(player.position); //keep on looking where the player is
   }
+
+  //used for numpadkeys and arduino
+  void TurnLeft() { offset = Quaternion.AngleAxis(-turnSpeed, Vector3.up) * offset; }
+  void TurnRight() { offset = Quaternion.AngleAxis(turnSpeed, Vector3.up) * offset; }
 
   public void ZoomOut()
   {

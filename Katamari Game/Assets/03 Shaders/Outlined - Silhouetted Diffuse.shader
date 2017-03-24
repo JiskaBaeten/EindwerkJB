@@ -1,8 +1,17 @@
+/**
+* Outline shader - http://wiki.unity3d.com/index.php/Silhouette-Outlined_Diffuse
+* Author: AnomalousUnderdog
+*
+* Content is available under Creative Commons Attribution Share Alike.
+* https://creativecommons.org/licenses/by-sa/2.5/
+*/
+
+//shader used to create the outline when assigned button is pressed
 Shader "Outlined/Silhouetted Bumped Diffuse" {
 	Properties{
-		_Color("Main Color", Color) = (.5,.5,.5,1)
+		_Color("Main Color", Color) = (0,0,0,1) //always takes the original color of the default shader anyway
 		_OutlineColor("Outline Color", Color) = (255,0,0,1)
-		_Outline("Outline width", Range(0.0, 3)) = .005 // set how far the max outline may be from original object
+		_Outline("Outline width", Range(0.0, 3)) = .5 // set how far the max outline may be from original object
 		_MainTex("Base (RGB)", 2D) = "white" { }
 	_BumpMap("Bumpmap", 2D) = "bump" {}
 	}
@@ -49,11 +58,7 @@ Shader "Outlined/Silhouetted Bumped Diffuse" {
 		ZTest Always
 
 		// you can choose what kind of blending mode you want for the outline
-		Blend SrcAlpha OneMinusSrcAlpha // Normal
-										//Blend One One // Additive
-										//Blend One OneMinusDstColor // Soft Additive
-										//Blend DstColor Zero // Multiplicative
-										//Blend DstColor SrcColor // 2x Multiplicative
+		Blend SrcAlpha OneMinusSrcAlpha // options: Normal, One One (Additive), OneMinusDstColor (Soft Additive), DstColor Zero (Multiplicative), DstColor SrcColor (2x Multiplicative)
 
 		CGPROGRAM
 #pragma vertex vert
@@ -95,11 +100,7 @@ Shader "Outlined/Silhouetted Bumped Diffuse" {
 		Offset 15,15
 
 		// you can choose what kind of blending mode you want for the outline
-		Blend SrcAlpha OneMinusSrcAlpha // Normal
-										//Blend One One // Additive
-										//Blend One OneMinusDstColor // Soft Additive
-										//Blend DstColor Zero // Multiplicative
-										//Blend DstColor SrcColor // 2x Multiplicative
+		Blend SrcAlpha OneMinusSrcAlpha // options: Normal, One One (Additive), OneMinusDstColor (Soft Additive), DstColor Zero (Multiplicative), DstColor SrcColor (2x Multiplicative)
 
 		CGPROGRAM
 #pragma vertex vert

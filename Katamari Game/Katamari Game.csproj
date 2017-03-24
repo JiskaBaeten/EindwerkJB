@@ -12,7 +12,7 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
@@ -81,6 +81,10 @@
     <Compile Include="Assets\01 scripts\MovePlayer.cs" />
     <Compile Include="Assets\01 scripts\PickupObject.cs" />
     <Compile Include="Assets\01 scripts\PlayerController.cs" />
+    <Compile Include="Assets\01 scripts\SerialComm\MessageListener.cs" />
+    <Compile Include="Assets\01 scripts\SerialComm\MessageReadWrite.cs" />
+    <Compile Include="Assets\01 scripts\SerialComm\SerialController.cs" />
+    <Compile Include="Assets\01 scripts\SerialComm\SerialThread.cs" />
     <Compile Include="Assets\01 scripts\Timer.cs" />
     <Compile Include="Assets\01 scripts\ToggleOutlinePickups.cs" />
     <Compile Include="Assets\01 scripts\cameraController.cs" />

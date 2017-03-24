@@ -53,7 +53,8 @@ void loop()
     {
       teller1--;
     }
-      Serial.println("Encoder1: " + String(teller1));  //geformateerd in een string, wordt later toch opgevangen in unity
+      Serial.print("Encoder1: ");
+      Serial.println(teller1);
       delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
     }
 
@@ -71,7 +72,8 @@ void loop()
     {
       teller2--;
     }
-      Serial.println("Encoder2: " + String(teller2)); //geformateerd in een string, wordt later toch opgevangen in unity
+      Serial.print("Encoder2: ");
+      Serial.println(teller2);
       delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
   }
 }

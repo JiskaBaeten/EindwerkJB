@@ -10,7 +10,6 @@ public class ToggleOutlinePickups : MonoBehaviour
   private PickupObject po = null;
   Shader outlineShader;
   Shader normalShader;
-  bool imOutlined = false;
   bool outlineVisible = false;
 
   private void Start()
@@ -27,19 +26,22 @@ public class ToggleOutlinePickups : MonoBehaviour
       outlineVisible = !outlineVisible;
     }
 
-    if (outlineVisible)
+    if (outlineVisible) //show outline when space/mouse has been pressed
     {
       if (po.ImSmaller) // -> outline
       {
         this.GetComponent<Renderer>().material.shader = outlineShader;
-       // imOutlined = true;
       }
+      /*
+      else if (this is stuck to pickupcontainer) //if stuck to container, it doesn't need an outline
+      {
+        this.GetComponent<Renderer>().material.shader = normalShader;
+      }
+       */
     }
-  //  else if (!po.ImSmaller || this.transform.parent.gameObject.name == "pickup_holder")
-  else
+    else //hide outline
     {
       this.GetComponent<Renderer>().material.shader = normalShader;
-      imOutlined = false;
     }
   }
 }

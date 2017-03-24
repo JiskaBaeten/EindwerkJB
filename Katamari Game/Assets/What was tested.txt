@@ -7,7 +7,7 @@
 -script Timer works
 
 *not implemented yet:
--script PickupObject --> check if smaller when button press
+-script PickupObject --> check if smaller when button press > works half
 
 
 NOTES!!!
