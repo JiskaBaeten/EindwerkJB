@@ -20,39 +20,65 @@ public class PlayerController : MonoBehaviour
   private byte pickUpsShowing = 10; //limits how many objects that stay visible on the ball
 
   public Text winText;
-  public static bool areWePlaying;
+  public static bool didWeWin;
+  private bool lvlLoadIsTriggered = false;
+  private byte loadMenuLevel = 0;
+
+  AudioSource audioRolledUp; //sound when rolled up
 
   void Start()
   {
     ballSize = playerRigidBody.transform.localScale;
     SetSizeText();
     winText.text = ""; //make sure it's empty at the start
-    areWePlaying = true;
+    didWeWin = false;
+  }
+
+  void Update()
+  {
+    if (didWeWin) //check if we won so we can return to the menu with buttonpress
+    {
+      if (!lvlLoadIsTriggered) //if we haven't started loading, so multiple triggers won't work
+      {
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
+        {
+          lvlLoadIsTriggered = true;
+          LoadingScreenManager.LoadScene(loadMenuLevel);
+        }
+      }
+    }
   }
 
   void OnTriggerEnter(Collider pickup)
   {
-    if (pickup.gameObject.tag.StartsWith("PickUp"))
+
+    if (pickup.gameObject.tag == "PickUpWin") //check if it's a winning object first
+    {
+      Debug.Log("test");
+      winText.text = "You Win! \n Press space or left click to continue...";
+      didWeWin = true;
+    }
+
+    if (pickup.gameObject.tag.StartsWith("PickUp")) //all tags that start with Pickup, so PickupWin is included
     {
       pickup.gameObject.GetComponent<Collider>().isTrigger = false;
       pickup.gameObject.GetComponent<Collider>().enabled = false;
+      pickup.gameObject.tag = "StuckToBall";
       pickupArray.Add(pickup.gameObject);
+      audioRolledUp = pickup.gameObject.GetComponent<AudioSource>();
+      audioRolledUp.Play(); //play sound when rolled up
 
       LimitShownObjects();
 
       SetGrowthSize(pickup.transform.localScale);
       pickup.gameObject.transform.parent = collector.transform;
+
       ballSize = ballSize + upSize;
       playerRigidBody.transform.localScale = ballSize; //update ballsize
 
       SetSizeText();
     }
 
-    if (pickup.gameObject.tag == "PickUpWin")
-    {
-      winText.text = "You Win!";
-      areWePlaying = false;
-    }
   }
 
   void SetSizeText() //shows 

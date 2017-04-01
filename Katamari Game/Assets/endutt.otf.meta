@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 89be667a40c44a4449a45884122c2595
+timeCreated: 1491053981
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Endutt
+  fontNames:
+  - Endutt
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

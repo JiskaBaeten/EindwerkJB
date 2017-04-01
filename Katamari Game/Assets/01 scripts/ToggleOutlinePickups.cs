@@ -21,23 +21,21 @@ public class ToggleOutlinePickups : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKey(KeyCode.Space) || Input.GetMouseButtonUp(0))
+    if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
     {
       outlineVisible = !outlineVisible;
     }
 
     if (outlineVisible) //show outline when space/mouse has been pressed
     {
-      if (po.ImSmaller) // -> outline
+      if (po.ImSmaller && this.gameObject.tag != "StuckToBall") // -> outline when smaller and not stuck to ball
       {
         this.GetComponent<Renderer>().material.shader = outlineShader;
       }
-      /*
-      else if (this is stuck to pickupcontainer) //if stuck to container, it doesn't need an outline
+      else if (this.gameObject.tag == "StuckToBall") //if stuck to container > no outline
       {
         this.GetComponent<Renderer>().material.shader = normalShader;
       }
-       */
     }
     else //hide outline
     {

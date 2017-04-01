@@ -15,7 +15,7 @@ public class PickupObject : MonoBehaviour
   {
     playerObject = GameObject.FindGameObjectWithTag("Player");
     pickup = this.gameObject;
-    //pickup.gameObject.tag = "PickUp"; //put this tag onto the object the script is hanging onto -> do this manual
+    //pickup.gameObject.tag = "PickUp"; //put this tag onto the object the script is hanging onto -> do this manualy
     volumePickup = pickup.transform.localScale.x * pickup.transform.localScale.y * pickup.transform.localScale.z;
   }
 
