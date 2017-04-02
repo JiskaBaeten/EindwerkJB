@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4190187d278a66f449f452b09cb98cc7
-timeCreated: 1491150024
+timeCreated: 1491155740
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -87,10 +87,10 @@ TextureImporter:
       name: Rolling-animation-Loadscreen-SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 739
-        width: 760
-        height: 518
+        x: 0
+        y: 571
+        width: 800
+        height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,10 +100,10 @@ TextureImporter:
       name: Rolling-animation-Loadscreen-SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 805
-        y: 739
-        width: 760
-        height: 518
+        x: 855
+        y: 571
+        width: 800
+        height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,10 +113,10 @@ TextureImporter:
       name: Rolling-animation-Loadscreen-SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 1595
-        y: 739
-        width: 760
-        height: 518
+        x: 1710
+        y: 571
+        width: 800
+        height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,10 +126,10 @@ TextureImporter:
       name: Rolling-animation-Loadscreen-SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 15
-        y: 198
-        width: 760
-        height: 518
+        x: 0
+        y: 46
+        width: 800
+        height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,10 +139,10 @@ TextureImporter:
       name: Rolling-animation-Loadscreen-SpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 805
-        y: 198
-        width: 760
-        height: 518
+        x: 855
+        y: 46
+        width: 800
+        height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Rolling-animation-Loadscreen-SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 1595
-        y: 198
-        width: 760
-        height: 518
+        x: 1710
+        y: 46
+        width: 800
+        height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
