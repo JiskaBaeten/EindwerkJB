@@ -9,9 +9,10 @@
 -script ToggleOutlinePickups works > ***though it acts weird on meshes***
 -script PickupObject --> works
 -RolledUp Sound works!
+-script pausegame works  (Loadscene and quitgame too?) ********************
 
 **not implemented yet:**
-- script FollowPlayer doesnt work yet
+- script beetleController doesnt work yet
 
 **NOTES!!!**
 > script attachPickup to player? > picked up items disappear but player sizes anyway
@@ -26,3 +27,5 @@
 
 
 > Static variables stay even if you change scene?? -> sure about that?
+
+> [Serialize] can be used to set private variables in inspector and to save/store variables

@@ -73,8 +73,7 @@ public class PlayerController : MonoBehaviour
 
   void SetSizeText() 
   {
-    ///float sizeForText = ballSize.x * scaleToCm; //so the player has a realistic size to think about
-    float sizeForText = ballSize.x;
+    float sizeForText = ballSize.x * scaleToCm; //so the player has a realistic size to think about
     SizeText.text = "Size: " + sizeForText.ToString("F2") + " cm";
   }
 

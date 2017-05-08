@@ -76,12 +76,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\01 scripts\AttachPickup.cs" />
+    <Compile Include="Assets\01 scripts\BeetleController.cs" />
     <Compile Include="Assets\01 scripts\FollowPlayer.cs" />
     <Compile Include="Assets\01 scripts\HideMouseCursor.cs" />
     <Compile Include="Assets\01 scripts\LoadingScreenManager.cs" />
     <Compile Include="Assets\01 scripts\LookAtPointLock.cs" />
     <Compile Include="Assets\01 scripts\MenuPlayerController.cs" />
     <Compile Include="Assets\01 scripts\MovePlayer.cs" />
+    <Compile Include="Assets\01 scripts\PauseGame.cs" />
     <Compile Include="Assets\01 scripts\PickupObject.cs" />
     <Compile Include="Assets\01 scripts\PlayerController.cs" />
     <Compile Include="Assets\01 scripts\SerialComm\MessageListener.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Assets\01 scripts\SerialComm\SerialController.cs" />
     <Compile Include="Assets\01 scripts\SerialComm\SerialThread.cs" />
     <Compile Include="Assets\01 scripts\Timer.cs" />
+    <Compile Include="Assets\01 scripts\ToggleMusic.cs" />
     <Compile Include="Assets\01 scripts\ToggleOutlinePickups.cs" />
     <Compile Include="Assets\01 scripts\cameraController.cs" />
   </ItemGroup>
