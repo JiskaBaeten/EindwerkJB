@@ -118,7 +118,7 @@ public class LoadingScreenManager : MonoBehaviour {
 		loadingDoneIcon.gameObject.SetActive(false);
 
 		progressBar.fillAmount = 0f;
-		loadingText.text = "Loading...";
+		loadingText.text = "Loading..."; //Choose text to show
 	}
 
 	void ShowCompletionVisuals() {

@@ -126,4 +126,7 @@ public class cameraController : MonoBehaviour
 
     transform.position = player.position + offset;
   }
+
+  public Vector3 OffsetCam
+  { get { return offset; } }
 }

@@ -79,6 +79,7 @@
     <Compile Include="Assets\01 scripts\FollowPlayer.cs" />
     <Compile Include="Assets\01 scripts\HideMouseCursor.cs" />
     <Compile Include="Assets\01 scripts\LoadingScreenManager.cs" />
+    <Compile Include="Assets\01 scripts\LookAtPointLock.cs" />
     <Compile Include="Assets\01 scripts\MenuPlayerController.cs" />
     <Compile Include="Assets\01 scripts\MovePlayer.cs" />
     <Compile Include="Assets\01 scripts\PickupObject.cs" />

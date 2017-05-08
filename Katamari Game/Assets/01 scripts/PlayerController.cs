@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
   private Vector3 upSize;
   private byte growSize = 6; //so it grows not too fast (1/3 of the object in every direction)
 
+  //variables for picking up objects
   public GameObject collector;
   public List<GameObject> pickupArray = new List<GameObject>();
   private byte pickUpsShowing = 10; //limits how many objects that stay visible on the ball
@@ -36,17 +37,7 @@ public class PlayerController : MonoBehaviour
 
   void Update()
   {
-    if (didWeWin) //check if we won so we can return to the menu with buttonpress
-    {
-      if (!lvlLoadIsTriggered) //if we haven't started loading, so multiple triggers won't work
-      {
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
-        {
-          lvlLoadIsTriggered = true;
-          LoadingScreenManager.LoadScene(loadMenuLevel);
-        }
-      }
-    }
+    CheckifWon();
   }
 
   void OnTriggerEnter(Collider pickup)
@@ -54,7 +45,6 @@ public class PlayerController : MonoBehaviour
 
     if (pickup.gameObject.tag == "PickUpWin") //check if it's a winning object first
     {
-      Debug.Log("test");
       winText.text = "You Win! \n Press space or left click to continue...";
       didWeWin = true;
     }
@@ -76,12 +66,12 @@ public class PlayerController : MonoBehaviour
       ballSize = ballSize + upSize;
       playerRigidBody.transform.localScale = ballSize; //update ballsize
 
-      SetSizeText();
+      SetSizeText(); //update sizeText
     }
 
   }
 
-  void SetSizeText() //shows 
+  void SetSizeText() 
   {
     ///float sizeForText = ballSize.x * scaleToCm; //so the player has a realistic size to think about
     float sizeForText = ballSize.x;
@@ -105,6 +95,21 @@ public class PlayerController : MonoBehaviour
     {
       Destroy(pickupArray[0].gameObject); //destroy oldest
       pickupArray.RemoveAt(0); //remove null from list
+    }
+  }
+
+  void CheckifWon()
+  {
+    if (didWeWin) //check if we won so we can return to the menu with buttonpress
+    {
+      if (!lvlLoadIsTriggered) //if we haven't started loading, so multiple triggers won't work
+      {
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
+        {
+          lvlLoadIsTriggered = true;
+          LoadingScreenManager.LoadScene(loadMenuLevel);
+        }
+      }
     }
   }
 
