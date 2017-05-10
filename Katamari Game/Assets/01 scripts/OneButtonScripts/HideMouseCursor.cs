@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//hide cursor with buttonpress
 public class HideMouseCursor : MonoBehaviour
 {
   private bool showingMouseCursor = true;

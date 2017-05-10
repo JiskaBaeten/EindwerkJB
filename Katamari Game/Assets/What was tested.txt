@@ -1,6 +1,5 @@
 *tested:
 -script AttachPickup works
--script cameracontroller was tested ==> !!!!!Only zooming out offset seems wrong + doesnt go slow
 -script LoadingScreenManager works
 -script MovePlayer works (works with mouse, arrowkeys and numpad) > ***tweak controlls for arduino***
 -script Playercontroller was tested --> why is there a speed???
@@ -9,22 +8,28 @@
 -script ToggleOutlinePickups works > ***though it acts weird on meshes***
 -script PickupObject --> works
 -RolledUp Sound works!
--script pausegame works  (Loadscene and quitgame too?) ********************
+-script pausegame works
+-script WinCheat works
+-script SaveHighscore works
+-script ResetHighScore works
+-script LoadHighScore works
 
 **not implemented yet:**
 - script beetleController doesnt work yet
+-script cameracontroller was tested ==> !!!!!Only zooming out offset seems wrong + doesnt go slow
 
 **NOTES!!!**
-> script attachPickup to player? > picked up items disappear but player sizes anyway
+> script attachPickup to player? > picked up items disappear but player sizes anyway -> nope
 > keep it on the pickup_holder > pickups visible after picking up, but no rigidbody or collider on them so it looks weird
+
 > can't slowly zoom out? and zoom out doesn't work right now
 
 > mesh colliders need to be convex to be triggered -> roll on convex meshes can be a bother (not be able to go under swing, roll on table)
 	suggested fix: multiple layers of colliders (box for colliders to roll on, mesh for) -> works
 
 > growing too fast? (example klimrek) > error in sizegrow Method?
-> outline on everything smaller than you (pickupobject)
 
+> outline on everything smaller than you (pickupobject)
 
 > Static variables stay even if you change scene?? -> sure about that?
 

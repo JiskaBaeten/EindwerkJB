@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//turn music on/off with buttonpress
 public class ToggleMusic : MonoBehaviour {
 
   private bool musicOn = true;

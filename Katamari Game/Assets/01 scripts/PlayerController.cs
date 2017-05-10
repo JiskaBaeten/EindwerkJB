@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
   private byte pickUpsShowing = 10; //limits how many objects that stay visible on the ball
 
   public Text winText;
-  public static bool didWeWin;
+  private static bool didWeWin;
   private bool lvlLoadIsTriggered = false;
   private byte loadMenuLevel = 0;
 
@@ -115,5 +115,10 @@ public class PlayerController : MonoBehaviour
   public Vector3 SizeBall //to use the size of the ball in other scripts
   {
     get { return ballSize; }
+  }
+
+  public static bool DidWeWin
+  {
+    get { return didWeWin; }
   }
 }

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//attach to pickups
-//should trigger outlines when smaller + playerinput
+//attach to pickups!!
+//trigger outlines when smaller + playerinput (buttonpress)
 //doesnt work perfectly on meshes!!! fix!!
+
 public class ToggleOutlinePickups : MonoBehaviour
 {
   private PickupObject po = null;
@@ -21,7 +22,7 @@ public class ToggleOutlinePickups : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
+    if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)) //toggle outline
     {
       outlineVisible = !outlineVisible;
     }

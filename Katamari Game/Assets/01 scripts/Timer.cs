@@ -5,7 +5,7 @@ using UnityEngine.UI;
 //used to time how long someone is playing the level
 public class Timer : MonoBehaviour
 {
-  float totalTime = 0f;
+  private static float totalTime = 0f;
 
   private void Start()
   {
@@ -14,11 +14,16 @@ public class Timer : MonoBehaviour
 
   void Update()
   {
-    if (!PlayerController.didWeWin) //check the bool in de playercontroller script, havent won yet
+    if (!PlayerController.DidWeWin) //check the bool in de playercontroller script, havent won yet
     { 
     totalTime += Time.deltaTime;
     GetComponent<Text>().text = "Time: " + totalTime.ToString("F2"); //with 2 decimals
     }
+  }
+
+  public static float TotalTime
+  {
+    get { return totalTime; }
   }
 
 }

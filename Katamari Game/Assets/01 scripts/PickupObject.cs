@@ -21,8 +21,9 @@ public class PickupObject : MonoBehaviour
 
   void Update()
   {
-    //volume sphere: r^3 * pi * 4/3 is bigger than the pickup
-    //divided by two since I only have the diametre
+    //volume sphere: r^3 * pi * 4/3
+    //divided by two since I only have the diametre and I need r
+    //so when the pickups are smaller than the ball
     if ((((playerObject.transform.localScale.x / 2f) * (playerObject.transform.localScale.x / 2f) * (playerObject.transform.localScale.x / 2f)) * 3.14f * (4 / 3)) > (volumePickup))
     {
       imSmaller = true;
@@ -38,7 +39,7 @@ public class PickupObject : MonoBehaviour
           }
         }
       }
-      else //when it has no meshCollider
+      else //when it has no meshCollider, but it does have other colliders
       {
         pickup.gameObject.GetComponent<Collider>().isTrigger = true;
       }

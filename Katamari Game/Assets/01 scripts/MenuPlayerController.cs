@@ -41,14 +41,14 @@ public class MenuPlayerController : MonoBehaviour
       {
         //LoadingScreenManager.LoadScene(loadStreetLevel);
         Debug.Log("Touched LVL STREET!");
-        comingSoonText.text = "Coming soon!";
+        //comingSoonText.text = "Coming soon!";
       }
 
       if (triggerLevels.gameObject.tag == "LVL3") //load level 3 - earth -> COMING SOON?
       {
         //LoadingScreenManager.LoadScene(loadEarthLevel);
         Debug.Log("Touched LVL EARTH!");
-        comingSoonText.text = "Coming soon!";
+        //comingSoonText.text = "Coming soon!";
       }
     }
   }
