@@ -5,12 +5,9 @@ using System.Collections.Generic;
 
 //stick it to the ball
 //controls stuff concerning the player (When it touches a trigger, to make the ball grow, limit how many pickups are shown onto the ball...)
-// SPEED???
-//MAKE VISUALS LOAD SCREEN
 public class MenuPlayerController : MonoBehaviour
 {
   public Rigidbody playerRigidBody;
-  public float speed; //SAME CONCERNING THIS SPEED
   private Vector3 ballSize;
 
   //check number in buildsettings

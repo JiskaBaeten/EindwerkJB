@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 //script used to send and read messages from the arduino
 public class MessageReadWrite : MonoBehaviour
@@ -17,6 +18,10 @@ public class MessageReadWrite : MonoBehaviour
 
   public bool? enc1TurnLeft = null; //made nullable for when it has no input
   public bool? enc2TurnLeft = null; //made nullable for when it has no input
+
+  [SerializeField]
+  private bool connectedToArduino = false; //check if arduino is connected
+  public Text connectionStatusText; //text for player to see if Arduino is connected
 
   void Start()
   {
@@ -40,11 +45,19 @@ public class MessageReadWrite : MonoBehaviour
 
     // Check if the message is plain data or a connect/disconnect event.
     if (ReferenceEquals(recievedData, SerialController.SERIAL_DEVICE_CONNECTED))
+    {
       Debug.Log("Connection established");
+      connectedToArduino = true;
+    }
     else if (ReferenceEquals(recievedData, SerialController.SERIAL_DEVICE_DISCONNECTED))
+    {
       Debug.Log("Connection attempt failed or disconnection detected");
+      connectedToArduino = false;
+    }
     else
       Debug.Log("Message arrived: " + recievedData);
+
+    UpdateConnectionText(connectedToArduino);
   }
 
   void CheckLeftOrRight(string whichEncoder)
@@ -76,6 +89,20 @@ public class MessageReadWrite : MonoBehaviour
         break;
       default:
         break;
+    }
+  }
+
+  void UpdateConnectionText(bool isConnected)
+  {
+    if (isConnected)
+    {
+      connectionStatusText.text = "Connected";
+      connectionStatusText.color = Color.green;
+    }
+    else
+    {
+      connectionStatusText.text = "Disconnected";
+      connectionStatusText.color = Color.red;
     }
   }
 }

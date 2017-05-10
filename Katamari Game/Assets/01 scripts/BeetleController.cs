@@ -32,7 +32,8 @@ public class BeetleController : MonoBehaviour
     {
       ballSize = pc.SizeBall; //must be updated
       //offset = new Vector3(player.position.x, -ballSize.y/2, player.position.z);
-      offset = new Vector3(player.position.x /5 + ballSize.x / 2,  -ballSize.y / 2, player.position.z / 5 + ballSize.z/2);
+      ///offset = new Vector3(player.position.x /5 + ballSize.x / 2,  -ballSize.y / 2, player.position.z / 5 + ballSize.z/2);
+      offset = new Vector3(player.position.x, player.position.y+ 0.5f, player.position.z+ 5.0f);
     }
   }
 

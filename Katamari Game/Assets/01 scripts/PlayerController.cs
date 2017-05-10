@@ -4,11 +4,9 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 //controls stuff concerning the player (When it touches a trigger, to make the ball grow, limit how many pickups are shown onto the ball...)
-// PUBLIC SPEED???
 public class PlayerController : MonoBehaviour
 {
   public Rigidbody playerRigidBody;
-  public float speed; //DOES THIS SPEED DO ANYTHING?
   public Text SizeText;
   public float scaleToCm = 100.0f; //to give the player a realistic number to work with
   private Vector3 ballSize;
@@ -25,7 +23,7 @@ public class PlayerController : MonoBehaviour
   private bool lvlLoadIsTriggered = false;
   private byte loadMenuLevel = 0;
 
-  AudioSource audioRolledUp; //sound when rolled up
+  private AudioSource audioRolledUp; //sound when rolled up
 
   void Start()
   {
@@ -56,7 +54,9 @@ public class PlayerController : MonoBehaviour
       pickup.gameObject.tag = "StuckToBall";
       pickupArray.Add(pickup.gameObject);
       audioRolledUp = pickup.gameObject.GetComponent<AudioSource>();
-      audioRolledUp.Play(); //play sound when rolled up
+
+      if (this.audioRolledUp != null) //when it has a sound
+        audioRolledUp.Play(); //play sound when rolled up
 
       LimitShownObjects();
 
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
   }
 
-  void SetSizeText() 
+  void SetSizeText()
   {
     float sizeForText = ballSize.x * scaleToCm; //so the player has a realistic size to think about
     SizeText.text = "Size: " + sizeForText.ToString("F2") + " cm";

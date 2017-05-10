@@ -17,6 +17,7 @@
 **not implemented yet:**
 - script beetleController doesnt work yet
 -script cameracontroller was tested ==> !!!!!Only zooming out offset seems wrong + doesnt go slow
+- test if connectionStatus is show with arduino!!
 
 **NOTES!!!**
 > script attachPickup to player? > picked up items disappear but player sizes anyway -> nope
@@ -34,3 +35,5 @@
 > Static variables stay even if you change scene?? -> sure about that?
 
 > [Serialize] can be used to set private variables in inspector and to save/store variables
+
+> unity werken met radialen, dus --> overstaande zijde = schuinliggende / Mathf.Sin(hoek * Mathf.Deg2Rad)

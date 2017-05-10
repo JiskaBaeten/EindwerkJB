@@ -14,7 +14,11 @@ public class FollowPlayer : MonoBehaviour
   private Vector3 beetleOffset;
 
   private cameraController cc;
-  private float distance = 0;
+  private Quaternion camRot;
+  private float distance;
+  private Vector3 testOffset;
+  private float testSin;
+  private float sinGetal;
 
   void Start()
   {
@@ -22,15 +26,25 @@ public class FollowPlayer : MonoBehaviour
   }
   void Update()
   {
-    distance = Vector3.Distance(lockPosition.position, cameraOb.transform.position);
-    if (cc != null) offset = cc.OffsetCam / 2;
+      beetleOffset = new Vector3(cameraOb.transform.position.x, lockPosition.position.y, cameraOb.transform.position.z);
+    //camRot = Quaternion.Euler(cameraOb.transform.rotation.x, cameraOb.transform.rotation.y, cameraOb.transform.rotation.z);
 
-    //Debug.Log("distance" + distance);
-    //beetleOffset = new Vector3(offset.x, -0.5f, offset.z);
-    //************ afstand nog ni goe
-    beetleOffset = new Vector3(cameraOb.transform.position.x-distance*2, lockPosition.position.y, cameraOb.transform.position.z-distance);
-    //Debug.Log(beetleOffset);
-    transform.position = lockPosition.position + beetleOffset;
+    // transform.position = lockPosition.position - beetleOffset; //beetleoffset is nu recht onder cam
+    //transform.RotateAround(lockPosition.position, Vector3.up, camRot);
+
+    //schuine, overstaande nodig -> sinus -> hoek is x rot cam --> overstaande = schuin / sin(hoek in graden) 
+    // distance = Vector3.Distance(lockPosition.position, cameraOb.transform.position); //schuine
+    distance = cameraOb.transform.position.y - lockPosition.position.y; //schuine
+
+    //unity werkt met radialen!!!
+    if (cameraOb != null)
+    { 
+    testSin = Mathf.Sin(cameraOb.transform.rotation.x * Mathf.Deg2Rad) /distance ;
+    }
+     //enkel nog te ver
+    transform.position = beetleOffset - new Vector3(0f, 0f, testSin);
+    Debug.Log("offset: " + beetleOffset);
+    Debug.Log("testsin: " + testSin);
 
     //rotates with cam so beetle is always looking at the ball
     transform.LookAt(lockPosition.position);
