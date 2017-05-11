@@ -23,14 +23,16 @@ public class PlayerController : MonoBehaviour
   private bool lvlLoadIsTriggered = false;
   private byte loadMenuLevel = 0;
 
+  private static bool isFirstPickedUp = false; //start timer when first pickup is picked up
+
   private AudioSource audioRolledUp; //sound when rolled up
 
   void Start()
   {
     ballSize = playerRigidBody.transform.localScale;
     SetSizeText();
-    winText.text = ""; //make sure it's empty at the start
     didWeWin = false;
+    isFirstPickedUp = false;
   }
 
   void Update()
@@ -54,6 +56,12 @@ public class PlayerController : MonoBehaviour
       pickup.gameObject.tag = "StuckToBall";
       pickupArray.Add(pickup.gameObject);
       audioRolledUp = pickup.gameObject.GetComponent<AudioSource>();
+      isFirstPickedUp = true;
+
+      if (isFirstPickedUp && !didWeWin)
+      {
+        winText.text = ""; //will also be used to show objective at the start, so has to be empty when picked up first thing
+      }
 
       if (this.audioRolledUp != null) //when it has a sound
         audioRolledUp.Play(); //play sound when rolled up
@@ -120,5 +128,10 @@ public class PlayerController : MonoBehaviour
   public static bool DidWeWin
   {
     get { return didWeWin; }
+  }
+
+  public static bool IsFirstPickedUp
+  {
+    get { return isFirstPickedUp; }
   }
 }

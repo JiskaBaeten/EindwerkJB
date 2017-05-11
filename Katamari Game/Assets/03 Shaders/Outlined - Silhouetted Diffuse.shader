@@ -12,6 +12,7 @@ Shader "Outlined/Silhouetted Bumped Diffuse" {
 		_Color("Main Color", Color) = (0,0,0,1) //always takes the original color of the default shader anyway
 		_OutlineColor("Outline Color", Color) = (65,51,166,1)
 		_Outline("Outline width", Range(0.0, 3)) = .5 // set how far the max outline may be from original object
+		_Size("Outline Thickness", Float) = 1.5
 		_MainTex("Base (RGB)", 2D) = "white" { }
 	_BumpMap("Bumpmap", 2D) = "bump" {}
 	}
@@ -19,6 +20,7 @@ Shader "Outlined/Silhouetted Bumped Diffuse" {
 		CGINCLUDE
 #include "UnityCG.cginc"
 
+		half _Size;
 		struct appdata {
 		float4 vertex : POSITION;
 		float3 normal : NORMAL;
@@ -39,8 +41,10 @@ Shader "Outlined/Silhouetted Bumped Diffuse" {
 
 		float3 norm = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);
 		float2 offset = TransformViewToProjection(norm.xy);
+		v.vertex.xyz *= _Size;
 
 		o.pos.xy += offset * o.pos.z * _Outline;
+		o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
 		o.color = _OutlineColor;
 		return o;
 	}

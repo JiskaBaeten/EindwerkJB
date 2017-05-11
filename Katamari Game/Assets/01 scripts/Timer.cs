@@ -14,10 +14,10 @@ public class Timer : MonoBehaviour
 
   void Update()
   {
-    if (!PlayerController.DidWeWin) //check the bool in de playercontroller script, havent won yet
-    { 
-    totalTime += Time.deltaTime;
-    GetComponent<Text>().text = "Time: " + totalTime.ToString("F2"); //with 2 decimals
+    if (!PlayerController.DidWeWin && PlayerController.IsFirstPickedUp) //check the bool in de playercontroller script, havent won yet
+    {
+      totalTime += Time.deltaTime;
+      GetComponent<Text>().text = "Time: " + totalTime.ToString("F2"); //with 2 decimals
     }
   }
 
