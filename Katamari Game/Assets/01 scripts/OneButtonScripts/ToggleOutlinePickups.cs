@@ -12,12 +12,14 @@ public class ToggleOutlinePickups : MonoBehaviour
   Shader outlineShader;
   Shader normalShader;
   bool outlineVisible = false;
+  bool ballMapShowing = false;
 
   private void Start()
   {
     outlineShader = Shader.Find("Outlined/Silhouetted Bumped Diffuse");
     normalShader = Shader.Find("Standard");
     po = this.GetComponent<PickupObject>();
+    ballMapShowing = false;
   }
 
   private void Update()
@@ -41,6 +43,18 @@ public class ToggleOutlinePickups : MonoBehaviour
     else //hide outline
     {
       this.GetComponent<Renderer>().material.shader = normalShader;
+    }
+
+
+    //for the minimap
+    if (po.ImSmaller && this.gameObject.tag != "StuckToBall" && !ballMapShowing)
+    {
+      if (transform.childCount > 0)
+      {
+        Debug.Log("Ball Showing!");
+        transform.GetChild(0).gameObject.SetActive(true);
+        ballMapShowing = true;
+      }
     }
   }
 }

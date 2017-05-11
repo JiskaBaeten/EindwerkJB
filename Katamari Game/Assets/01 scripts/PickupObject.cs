@@ -5,7 +5,7 @@ using System.Collections;
 //Mesh colliders need to be CONVEX if you want to use triggers
 public class PickupObject : MonoBehaviour
 {
-  public GameObject playerObject;
+  private GameObject playerObject;
   private GameObject pickup;
   private float volumePickup;
   private bool isOutlined = false;

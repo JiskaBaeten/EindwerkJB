@@ -58,6 +58,9 @@ public class PlayerController : MonoBehaviour
       audioRolledUp = pickup.gameObject.GetComponent<AudioSource>();
       isFirstPickedUp = true;
 
+      if (pickup.transform.childCount > 0)
+      pickup.transform.GetChild(0).gameObject.SetActive(false);
+
       if (isFirstPickedUp && !didWeWin)
       {
         winText.text = ""; //will also be used to show objective at the start, so has to be empty when picked up first thing

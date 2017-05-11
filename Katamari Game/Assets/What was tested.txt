@@ -37,3 +37,5 @@
 > [Serialize] can be used to set private variables in inspector and to save/store variables
 
 > unity werken met radialen, dus --> overstaande zijde = schuinliggende / Mathf.Sin(hoek * Mathf.Deg2Rad)
+
+> mag niet transform.setparent doen op een prefab
