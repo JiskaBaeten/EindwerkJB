@@ -10,6 +10,6 @@ public class LookAtPointLock : MonoBehaviour {
 	
 	void Update () {
     transform.position = new Vector3(playerTrans.position.x, transform.position.y, playerTrans.position.z);
-    transform.LookAt(new Vector3(2 * transform.position.x - camer.transform.position.x, 0, 2 * transform.position.z - camer.transform.position.z));
+    transform.LookAt(new Vector3(2 * transform.position.x - camer.transform.position.x, 0, 2 * transform.position.z - camer.transform.position.z)); //(2*tran.pos - cam.tran.pos) -> used to invert the lookat
   }
 }

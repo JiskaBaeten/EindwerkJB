@@ -13,9 +13,9 @@
 -script SaveHighscore works
 -script ResetHighScore works
 -script LoadHighScore works
+-qcript BeetleControllerV2 works;
 
 **not implemented yet:**
-- script beetleController doesnt work yet
 -script cameracontroller was tested ==> !!!!!Only zooming out offset seems wrong + doesnt go slow
 - test if connectionStatus is show with arduino!!
 

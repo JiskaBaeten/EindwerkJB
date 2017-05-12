@@ -20,6 +20,12 @@ public class ToggleOutlinePickups : MonoBehaviour
     normalShader = Shader.Find("Standard");
     po = this.GetComponent<PickupObject>();
     ballMapShowing = false;
+
+    if (transform.childCount > 0)
+      transform.GetChild(0).gameObject.SetActive(false);
+    else
+      Debug.Log(this.gameObject.name + " has no minimapSphere!");
+
   }
 
   private void Update()

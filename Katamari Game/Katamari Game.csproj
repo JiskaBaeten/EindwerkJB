@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Assets\01 scripts\AttachPickup.cs" />
     <Compile Include="Assets\01 scripts\BeetleController.cs" />
+    <Compile Include="Assets\01 scripts\BeetleControllerV2.cs" />
     <Compile Include="Assets\01 scripts\FollowPlayer.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\LoadHighscore.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\ResetHighscores.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="Assets\01 scripts\SerialComm\SerialThread.cs" />
     <Compile Include="Assets\01 scripts\Timer.cs" />
     <Compile Include="Assets\01 scripts\cameraController.cs" />
-    <Compile Include="Assets\testBeetle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\03 Shaders\Outlined - Silhouetted Diffuse.shader" />
