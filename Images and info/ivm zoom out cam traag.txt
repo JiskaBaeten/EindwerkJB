@@ -1,0 +1,40 @@
+public class SomeScript : MonoBehaviour {
+    private int speed = 1.0f;
+    private int newFoV = 0;
+ 
+    public void Start() {
+        // save the current FoV
+        newFoV = Camera.main.fieldOfView;
+    }
+ 
+    void Update() {
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, newFoV, 1/speed);
+    }
+ 
+    void OnTriggerEnter(Collider other) {
+        // it's better to  use other.CompareTag(..) instead of other.tag == "somestring"
+        if(other.CompareTag("TriggerOut") {
+            newFoV = 100f; // In C# you must add an f to float numbers
+        }
+    }
+}
+ 
+
+************************************
+---> altijd lerpen, enkel de afstand aanpassen in de lerp zelf wanneer dat moet
+
+ong:
+
+
+lerp(huidige, nieuwe, met welke speed)
+
+Vector3 nieuwePos = new Vector3(camera.transform.position, camera.transform.position.y + offsetY, camera.transform.position.z + offsetZ);
+
+camera.transform.position = MathF.Lerp(camera.transform.position, nieuwePos, time.Detlatime );
+
+Enkel offsetY en offsetZ (nieuwePos) aanpassen wanneer nummer uit lijst geweest is
+
+--> misschien is fixedUpdate beter( want anders wordt het teveel gedaan?)
+
+****************************************
+probeer met addforce(rigidbody) in Z richting

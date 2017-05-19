@@ -100,6 +100,7 @@
     <Compile Include="Assets\01 scripts\SerialComm\SerialThread.cs" />
     <Compile Include="Assets\01 scripts\Timer.cs" />
     <Compile Include="Assets\01 scripts\cameraController.cs" />
+    <Compile Include="Assets\CameraControllerV2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\03 Shaders\Outlined - Silhouetted Diffuse.shader" />
