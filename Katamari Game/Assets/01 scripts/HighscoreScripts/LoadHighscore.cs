@@ -16,6 +16,10 @@ public class LoadHighscore : MonoBehaviour
   private string lvl2Name = "streetScene";
   private string lvl3Name = "worldScene";
 
+  private string convertedTime = "";
+  private float minutes = 0f;
+  private float seconds = 0f;
+
   void Start()
   {
     LoadScores();
@@ -25,29 +29,39 @@ public class LoadHighscore : MonoBehaviour
   {
     if (!PlayerPrefs.HasKey("level " + lvl1Name)) //when it hasn't made a registery for lvl1
     {
-      lvl1Mesh.text = defaultMaxTime.ToString("F2") + " s";
+      lvl1Mesh.text = ConvertToMinutesAndSeconds(defaultMaxTime);
     }
     else
     {
-      lvl1Mesh.text = PlayerPrefs.GetFloat("level " + lvl1Name).ToString("F2") + " s"; //load the highscore for lvl1
+      lvl1Mesh.text = ConvertToMinutesAndSeconds(PlayerPrefs.GetFloat("level " + lvl1Name));
     }
 
     if (!PlayerPrefs.HasKey("level " + lvl2Name)) //when it hasn't made a registery for lvl2 yet
     {
-      lvl2Mesh.text = defaultMaxTime.ToString("F2") + " s";
+      lvl2Mesh.text = ConvertToMinutesAndSeconds(defaultMaxTime);
     }
     else
     {
-      lvl2Mesh.text = PlayerPrefs.GetFloat("level " + lvl2Name).ToString("F2") + " s"; //load the highscore for lvl2
+      lvl2Mesh.text = ConvertToMinutesAndSeconds(PlayerPrefs.GetFloat("level " + lvl2Name));
     }
 
     if (!PlayerPrefs.HasKey("level " + lvl3Name)) //when it hasn't made a registery for lvl3
     {
-      lvl3Mesh.text = defaultMaxTime.ToString("F2") + " s";
+      lvl3Mesh.text = ConvertToMinutesAndSeconds(defaultMaxTime);
     }
     else
     {
-      lvl3Mesh.text = PlayerPrefs.GetFloat("level " + lvl3Name).ToString("F2") + " s"; //load the highscore for lvl3
+      lvl3Mesh.text = ConvertToMinutesAndSeconds(PlayerPrefs.GetFloat("level " + lvl3Name));
     }
+  }
+
+  string ConvertToMinutesAndSeconds(float timeToConvert)
+  {
+
+    minutes = timeToConvert / 60;
+    seconds = timeToConvert % 60;
+
+    //to round down minutes and make sure there's nothing behind comma + seconds and milliseconds
+    return convertedTime = Mathf.Floor(minutes).ToString("F0") + ":" + seconds.ToString("F2");
   }
 }

@@ -21,7 +21,7 @@ public class ToggleOutlinePickups : MonoBehaviour
     po = this.GetComponent<PickupObject>();
     ballMapShowing = false;
 
-    if (transform.childCount > 0)
+    if (transform.childCount > 0) //if the object has a child (minimapsphere)
       transform.GetChild(0).gameObject.SetActive(false);
     else
       Debug.Log(this.gameObject.name + " has no minimapSphere!");
@@ -57,7 +57,6 @@ public class ToggleOutlinePickups : MonoBehaviour
     {
       if (transform.childCount > 0)
       {
-        Debug.Log("Ball Showing!");
         transform.GetChild(0).gameObject.SetActive(true);
         ballMapShowing = true;
       }

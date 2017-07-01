@@ -78,6 +78,7 @@
     <Compile Include="Assets\01 scripts\AttachPickup.cs" />
     <Compile Include="Assets\01 scripts\BeetleController.cs" />
     <Compile Include="Assets\01 scripts\BeetleControllerV2.cs" />
+    <Compile Include="Assets\01 scripts\CameraControllerV2.cs" />
     <Compile Include="Assets\01 scripts\FollowPlayer.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\LoadHighscore.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\ResetHighscores.cs" />
@@ -89,6 +90,8 @@
     <Compile Include="Assets\01 scripts\MovePlayer.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\HideMouseCursor.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\PauseGame.cs" />
+    <Compile Include="Assets\01 scripts\OneButtonScripts\QuitGame.cs" />
+    <Compile Include="Assets\01 scripts\OneButtonScripts\ToggleFullScreen.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\ToggleMusic.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\ToggleOutlinePickups.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\WinCheat.cs" />
@@ -100,7 +103,6 @@
     <Compile Include="Assets\01 scripts\SerialComm\SerialThread.cs" />
     <Compile Include="Assets\01 scripts\Timer.cs" />
     <Compile Include="Assets\01 scripts\cameraController.cs" />
-    <Compile Include="Assets\CameraControllerV2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\03 Shaders\Outlined - Silhouetted Diffuse.shader" />

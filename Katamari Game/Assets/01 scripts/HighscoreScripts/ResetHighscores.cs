@@ -14,6 +14,9 @@ public class ResetHighscores : MonoBehaviour
   public TextMesh lvl3Mesh;
 
   private float defaultMaxTime = 3600f;
+  private float minutes;
+  private float seconds;
+  private string convertedTime;
 
   void Update()
   {
@@ -28,9 +31,9 @@ public class ResetHighscores : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.Y))
       {
         PlayerPrefs.DeleteAll(); //delete all keys
-        lvl1Mesh.text = defaultMaxTime.ToString("F2") + " s";
-        lvl2Mesh.text = defaultMaxTime.ToString("F2") + " s";
-        lvl3Mesh.text = defaultMaxTime.ToString("F2") + " s";
+        lvl1Mesh.text = ConvertToMinutesAndSeconds(defaultMaxTime);
+        lvl2Mesh.text = ConvertToMinutesAndSeconds(defaultMaxTime);
+        lvl3Mesh.text = ConvertToMinutesAndSeconds(defaultMaxTime);
 
         warningText.text = "";
         isWarningShowing = false;
@@ -41,5 +44,15 @@ public class ResetHighscores : MonoBehaviour
         isWarningShowing = false;
       }
     }
+  }
+
+  string ConvertToMinutesAndSeconds(float timeToConvert)
+  {
+
+    minutes = timeToConvert / 60;
+    seconds = timeToConvert % 60;
+
+    //to round down minutes and make sure there's nothing behind comma + seconds and milliseconds
+    return convertedTime = Mathf.Floor(minutes).ToString("F0") + ":" + seconds.ToString("F2");
   }
 }

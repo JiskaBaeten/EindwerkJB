@@ -18,9 +18,15 @@ public class ToggleMusic : MonoBehaviour {
 
   void Update()
   {
-    if (Input.GetKeyUp(KeyCode.M)) musicOn = !musicOn; //toggle on/off
+    if (Input.GetKeyUp(KeyCode.M)) //toggle on/off
+    {
+      musicOn = !musicOn;
+      ToggleTheMusic();
+    } 
+  }
 
-    
+  void ToggleTheMusic()
+  {
     if (musicOn) //unpause music
     {
       bgMusic.UnPause();

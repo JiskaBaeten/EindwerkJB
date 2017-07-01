@@ -13,7 +13,8 @@
 -script SaveHighscore works
 -script ResetHighScore works
 -script LoadHighScore works
--qcript BeetleControllerV2 works;
+-script BeetleControllerV2 works;
+-script ToggleFullScreen works;
 
 **not implemented yet:**
 -script cameracontroller was tested ==> !!!!!Only zooming out offset seems wrong + doesnt go slow
