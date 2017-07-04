@@ -74,6 +74,16 @@ void loop()
       Serial.println("Encoder2: " + String(teller2)); //geformateerd in een string, wordt later toch opgevangen in unity
       delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
   }
+
+  if (teller1 <= -9223372036854775700 || teller 1 >= 9223372036854775700) //om het maximum en minimum van de long teller op te vangen mocht het spel veel aan 1 stuk gespeeld worden (beetje kleiner getal om overloading op te vangen)
+  {
+    teller1 = 0;
+  }
+
+  if (teller2 <= -9223372036854775700 || teller 2 >= 9223372036854775700) //om het maximum en minimum van de long teller op te vangen mocht het spel veel aan 1 stuk gespeeld worden. (beetje kleiner getal om overloading op te vangen)
+  {
+    teller2 = 0;
+  }
 }
 
 
