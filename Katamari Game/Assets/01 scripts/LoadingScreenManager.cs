@@ -53,7 +53,31 @@ public class LoadingScreenManager : MonoBehaviour {
 		fadeOverlay.gameObject.SetActive(true); // Making sure it's on so that we can crossfade Alpha
 		currentScene = SceneManager.GetActiveScene();
 		StartCoroutine(LoadAsync(sceneToLoad));
-	}
+
+    byte randomNr = (byte)Random.Range(0, 5);
+
+    switch (randomNr) { 
+      case 0: loadingText.text = "Loading...";
+        break;
+      case 1:
+        loadingText.text = "What are you looking at?";
+        break;
+      case 2:
+        loadingText.text = "Rolling, rolling, rolling...";
+        break;
+      case 3:
+        loadingText.text = "Revenge!!";
+        break;
+      case 4:
+        loadingText.text = "Yeehaw!!";
+        break;
+      default:
+        loadingText.text = "Loading!!";
+        break;
+    }
+
+    Debug.Log(loadingText.text);
+  }
 
 	private IEnumerator LoadAsync(int levelNum) {
 		ShowLoadingVisuals();
@@ -118,7 +142,7 @@ public class LoadingScreenManager : MonoBehaviour {
 		loadingDoneIcon.gameObject.SetActive(false);
 
 		progressBar.fillAmount = 0f;
-		loadingText.text = "Loading..."; //Choose text to show
+	//	loadingText.text = "Loading..."; //Choose text to show
 	}
 
 	void ShowCompletionVisuals() {
