@@ -40,3 +40,5 @@
 > unity werken met radialen, dus --> overstaande zijde = schuinliggende / Mathf.Sin(hoek * Mathf.Deg2Rad)
 
 > mag niet transform.setparent doen op een prefab
+
+> bij 3D models met glas: connect alles behalve glas, bake texture, connect glas nu
