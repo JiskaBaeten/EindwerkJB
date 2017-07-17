@@ -75,8 +75,6 @@ public class LoadingScreenManager : MonoBehaviour {
         loadingText.text = "Loading!!";
         break;
     }
-
-    Debug.Log(loadingText.text);
   }
 
 	private IEnumerator LoadAsync(int levelNum) {
