@@ -105,6 +105,7 @@
     <Compile Include="Assets\01 scripts\cameraController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\03 Shaders\3DTextOneSided.shader" />
     <None Include="Assets\03 Shaders\Outlined - Silhouetted Diffuse.shader" />
     <None Include="Assets\03 Shaders\Outlined - Toon.shader" />
     <None Include="Assets\What was tested.txt" />

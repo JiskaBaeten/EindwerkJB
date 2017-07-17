@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//NOT USING THIS
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -37,7 +38,7 @@ public class BeetleController : MonoBehaviour
     }
   }
 
-  void LateUpdate()
+  void LateUpdate() //controlls to turn
   {
     //turn around the Y-axis
     offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset; //if input is mouse

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1e180aa3aee57384e82c7437ed633b9b
+timeCreated: 1500285386
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Endutt-With-Numbers-v2
+  fontNames:
+  - Endutt-With-Numbers-v2
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6835dde90b7339c4ca3a7cf465d46cc3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
