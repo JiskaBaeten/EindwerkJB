@@ -15,6 +15,7 @@
 -script LoadHighScore works
 -script BeetleControllerV2 works;
 -script ToggleFullScreen works;
+-script MovieContoller works!!;
 
 **not implemented yet:**
 -script cameracontroller was tested ==> !!!!!Only zooming out offset seems wrong + doesnt go slow
