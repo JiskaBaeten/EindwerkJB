@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ResetHighscores : MonoBehaviour
 {
   public Text warningText;
+  public GameObject warningPanel;
   private bool isWarningShowing = false;
 
   public TextMesh lvl1Mesh;
@@ -18,11 +19,18 @@ public class ResetHighscores : MonoBehaviour
   private float seconds;
   private string convertedTime;
 
+  private void Start()
+  {
+    warningPanel.SetActive(false);
+  }
+
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.R))
     {
-      warningText.text = "Are you sure you want to reset ALL highscores? \n Y or N";
+      Debug.Log(warningText);
+      warningPanel.SetActive(true);
+      warningText.text = "Are you sure you want to reset \n ALL highscores? \n  Y or N";
       isWarningShowing = true;
     }
 
@@ -37,11 +45,13 @@ public class ResetHighscores : MonoBehaviour
 
         warningText.text = "";
         isWarningShowing = false;
+        warningPanel.SetActive(false);
       }
       else if (Input.GetKeyDown(KeyCode.N))
       {
         warningText.text = "";
         isWarningShowing = false;
+        warningPanel.SetActive(false);
       }
     }
   }

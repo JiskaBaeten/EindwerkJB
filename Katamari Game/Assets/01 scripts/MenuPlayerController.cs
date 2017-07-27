@@ -12,16 +12,27 @@ public class MenuPlayerController : MonoBehaviour
 
   //check number in buildsettings
   private int loadParkLevel = 2;
-  private int loadStreetLevel = 3;
-  private int loadEarthLevel = 4;
+  private int loadStreetLevel = 3; // buildnumbers still have to be changed
+  private int loadEarthLevel = 4;  // buildnumbers still have to be changed
 
   private bool lvlLoadIsTriggered = false;
 
   public Text comingSoonText;
+  public GameObject warningPanel;
+
+  private double timerTime = 0f;
 
   void Start()
   {
     ballSize = playerRigidBody.transform.localScale; //keep it here just in case other scripts ask about it
+  }
+
+  private void Update()
+  {
+    if (timerTime > 2)
+      warningPanel.SetActive(false);
+
+    timerTime += Time.deltaTime;
   }
 
   void OnTriggerEnter(Collider triggerLevels)//don't forget to turn trigger on!!
@@ -37,15 +48,19 @@ public class MenuPlayerController : MonoBehaviour
       if (triggerLevels.gameObject.tag == "LVL2") //load level 2 - street -> COMING SOON?
       {
         //LoadingScreenManager.LoadScene(loadStreetLevel);
-        Debug.Log("Touched LVL STREET!");
-        //comingSoonText.text = "Coming soon!";
+
+        warningPanel.SetActive(true);
+        comingSoonText.text = "Coming soon!";
+        timerTime = 0;
       }
 
       if (triggerLevels.gameObject.tag == "LVL3") //load level 3 - earth -> COMING SOON?
       {
         //LoadingScreenManager.LoadScene(loadEarthLevel);
-        Debug.Log("Touched LVL EARTH!");
-        //comingSoonText.text = "Coming soon!";
+
+        warningPanel.SetActive(true);
+        comingSoonText.text = "Coming soon!";
+        timerTime = 0;
       }
     }
   }

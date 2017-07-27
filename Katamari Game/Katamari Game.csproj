@@ -112,6 +112,8 @@
     <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\StartTutorial.cs" />
+    <Compile Include="Assets\TutorialInstrucController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\03 Shaders\3DTextOneSided.shader" />
