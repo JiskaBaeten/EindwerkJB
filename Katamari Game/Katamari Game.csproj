@@ -91,9 +91,11 @@
     <Compile Include="Assets\01 scripts\OneButtonScripts\HideMouseCursor.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\PauseGame.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\QuitGame.cs" />
+    <Compile Include="Assets\01 scripts\OneButtonScripts\StartTutorial.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\ToggleFullScreen.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\ToggleMusic.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\ToggleOutlinePickups.cs" />
+    <Compile Include="Assets\01 scripts\OneButtonScripts\TutorialInstrucController.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\WinCheat.cs" />
     <Compile Include="Assets\01 scripts\PickupObject.cs" />
     <Compile Include="Assets\01 scripts\PlayerController.cs" />
@@ -112,8 +114,6 @@
     <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
-    <Compile Include="Assets\StartTutorial.cs" />
-    <Compile Include="Assets\TutorialInstrucController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\03 Shaders\3DTextOneSided.shader" />
