@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 77d847abb073b4945bf2d46045c3f4d0
+timeCreated: 1501920448
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: beetle_1
+    100002: beetle_1_MeshPart0
+    100004: beetle_1_MeshPart1
+    100006: //RootNode
+    100008: belly
+    100010: chest
+    100012: head
+    100014: Joint_1
+    100016: Joint_1_2
+    100018: Joint_2
+    100020: Joint_2_2
+    100022: Joint_2_3
+    100024: Joint_3
+    100026: Joint_3_2
+    100028: Joint_3_3
+    100030: Joint_3_4
+    100032: Joint_4
+    100034: Joint_4_2
+    100036: Joint_4_3
+    100038: Joint_5
+    100040: Joint_5_2
+    100042: leftAntenna
+    100044: leftarm
+    100046: leftElbow
+    100048: leftFinger
+    100050: leftleg
+    100052: leftUperElbow
+    100054: leftUpperArm
+    100056: LeftUpperFinger
+    100058: leftUpperWrist
+    100060: leftWrist
+    100062: link_antennae
+    100064: neck
+    100066: RightAntenna
+    100068: rightarm
+    100070: rightElbow
+    100072: rightfinger
+    100074: rightleg
+    100076: rightUpperArm
+    100078: rightUpperElbow
+    100080: RightUpperFinger
+    100082: RightUpperWrist
+    100084: rightwrist
+    100086: Skin
+    100088: spine
+    400000: beetle_1
+    400002: beetle_1_MeshPart0
+    400004: beetle_1_MeshPart1
+    400006: //RootNode
+    400008: belly
+    400010: chest
+    400012: head
+    400014: Joint_1
+    400016: Joint_1_2
+    400018: Joint_2
+    400020: Joint_2_2
+    400022: Joint_2_3
+    400024: Joint_3
+    400026: Joint_3_2
+    400028: Joint_3_3
+    400030: Joint_3_4
+    400032: Joint_4
+    400034: Joint_4_2
+    400036: Joint_4_3
+    400038: Joint_5
+    400040: Joint_5_2
+    400042: leftAntenna
+    400044: leftarm
+    400046: leftElbow
+    400048: leftFinger
+    400050: leftleg
+    400052: leftUperElbow
+    400054: leftUpperArm
+    400056: LeftUpperFinger
+    400058: leftUpperWrist
+    400060: leftWrist
+    400062: link_antennae
+    400064: neck
+    400066: RightAntenna
+    400068: rightarm
+    400070: rightElbow
+    400072: rightfinger
+    400074: rightleg
+    400076: rightUpperArm
+    400078: rightUpperElbow
+    400080: RightUpperFinger
+    400082: RightUpperWrist
+    400084: rightwrist
+    400086: Skin
+    400088: spine
+    4300000: beetle_1_MeshPart0
+    4300002: beetle_1_MeshPart1
+    9500000: //RootNode
+    13700000: beetle_1_MeshPart0
+    13700002: beetle_1_MeshPart1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

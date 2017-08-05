@@ -5,11 +5,11 @@
  * 4-5 maart 2017
 */
 
-#define ROTARYINPUTPIN1A 2 //rotaryEncoder 1 - pin A
-#define ROTARYINPUTPIN2A 3 //rotaryEncoder 2 - pin A
+#define ROTARYINPUTPIN1A 3 //rotaryEncoder 1 - pin A
+#define ROTARYINPUTPIN2A 2 //rotaryEncoder 2 - pin A
 
-#define ROTARYINPUTPIN1B 4 //rotaryEncoder 1 - pin B
-#define ROTARYINPUTPIN2B 5 //rotaryEncoder 2 - pin B
+#define ROTARYINPUTPIN1B 5 //rotaryEncoder 1 - pin B
+#define ROTARYINPUTPIN2B 4 //rotaryEncoder 2 - pin B
 
 //volatile voor interruptgebruik, om na te kijken of er een interrupt is opgetreden
 volatile boolean BOOLROTPIN1A = false; 
@@ -75,12 +75,12 @@ void loop()
       delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
   }
 
-  if (teller1 <= -9223372036854775700 || teller 1 >= 9223372036854775700) //om het maximum en minimum van de long teller op te vangen mocht het spel veel aan 1 stuk gespeeld worden (beetje kleiner getal om overloading op te vangen)
+  if (teller1 <= -9223372036854775000 || teller1 >= 9223372036854775000) //om het maximum en minimum van de long teller op te vangen mocht het spel veel aan 1 stuk gespeeld worden (beetje kleiner getal om overloading op te vangen)
   {
     teller1 = 0;
   }
 
-  if (teller2 <= -9223372036854775700 || teller 2 >= 9223372036854775700) //om het maximum en minimum van de long teller op te vangen mocht het spel veel aan 1 stuk gespeeld worden. (beetje kleiner getal om overloading op te vangen)
+  if (teller2 <= -9223372036854775000 || teller2 >= 9223372036854775000) //om het maximum en minimum van de long teller op te vangen mocht het spel veel aan 1 stuk gespeeld worden. (beetje kleiner getal om overloading op te vangen)
   {
     teller2 = 0;
   }
