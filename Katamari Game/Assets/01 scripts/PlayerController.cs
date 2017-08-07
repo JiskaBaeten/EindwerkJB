@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
   private byte growSize = 6; //so it grows not too fast (1/3 of the object in every direction)
 
   //variables for picking up objects
-  public GameObject collector;
+  public GameObject pickupHolder;
   public List<GameObject> pickupArray = new List<GameObject>();
   private byte pickUpsShowing = 10; //limits how many objects that stay visible on the ball
 
@@ -55,8 +55,9 @@ public class PlayerController : MonoBehaviour
       pickup.gameObject.GetComponent<Collider>().enabled = false;
       pickup.gameObject.tag = "StuckToBall";
       pickupArray.Add(pickup.gameObject);
-      audioRolledUp = pickup.gameObject.GetComponent<AudioSource>();
+      audioRolledUp = pickup.gameObject.GetComponent<AudioSource>(); //load in pickupSound
       isFirstPickedUp = true;
+      Debug.Log(pickup.name);
 
       if (pickup.transform.childCount > 0)
       pickup.transform.GetChild(0).gameObject.SetActive(false);
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
       LimitShownObjects();
 
       SetGrowthSize(pickup.transform.localScale);
-      pickup.gameObject.transform.parent = collector.transform;
+      pickup.gameObject.transform.parent = pickupHolder.transform;
 
       ballSize = ballSize + upSize;
       playerRigidBody.transform.localScale = ballSize; //update ballsize

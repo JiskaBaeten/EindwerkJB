@@ -51,7 +51,7 @@ public class MessageReadWrite : MonoBehaviour
     }
     else if (ReferenceEquals(recievedData, SerialController.SERIAL_DEVICE_DISCONNECTED))
     {
-      Debug.Log("Connection attempt failed or disconnection detected");
+     // Debug.Log("Connection attempt failed or disconnection detected");
       connectedToArduino = false;
     }
     else

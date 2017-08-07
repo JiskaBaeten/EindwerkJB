@@ -142,7 +142,7 @@ public class SerialThread
                     // A disconnection happened, or there was a problem
                     // reading/writing to the device. Log the detailed message
                     // to the console and notify the listener too.
-                    Debug.LogWarning("Exception: " + ioe.Message + " StackTrace: " + ioe.StackTrace);
+                    //Debug.LogWarning("Exception: " + ioe.Message + " StackTrace: " + ioe.StackTrace); --> says if your port is connected
                     inputQueue.Enqueue(SerialController.SERIAL_DEVICE_DISCONNECTED);
 
                     // As I don't know in which stage the SerialPort threw the

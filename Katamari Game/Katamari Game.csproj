@@ -78,7 +78,10 @@
     <Compile Include="Assets\01 scripts\AttachPickup.cs" />
     <Compile Include="Assets\01 scripts\BeetleController.cs" />
     <Compile Include="Assets\01 scripts\BeetleControllerV2.cs" />
-    <Compile Include="Assets\01 scripts\CameraControllerV2.cs" />
+    <Compile Include="Assets\01 scripts\CameraScripts\CameraControllerV2.cs" />
+    <Compile Include="Assets\01 scripts\CameraScripts\CameraControllerV3.cs" />
+    <Compile Include="Assets\01 scripts\CameraScripts\MiniMapCamController.cs" />
+    <Compile Include="Assets\01 scripts\CameraScripts\cameraController.cs" />
     <Compile Include="Assets\01 scripts\FollowPlayer.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\LoadHighscore.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\ResetHighscores.cs" />
@@ -86,7 +89,6 @@
     <Compile Include="Assets\01 scripts\LoadingScreenManager.cs" />
     <Compile Include="Assets\01 scripts\LookAtPointLock.cs" />
     <Compile Include="Assets\01 scripts\MenuPlayerController.cs" />
-    <Compile Include="Assets\01 scripts\MiniMapCamController.cs" />
     <Compile Include="Assets\01 scripts\MovePlayer.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\HideMouseCursor.cs" />
     <Compile Include="Assets\01 scripts\OneButtonScripts\PauseGame.cs" />
@@ -104,7 +106,6 @@
     <Compile Include="Assets\01 scripts\SerialComm\SerialController.cs" />
     <Compile Include="Assets\01 scripts\SerialComm\SerialThread.cs" />
     <Compile Include="Assets\01 scripts\Timer.cs" />
-    <Compile Include="Assets\01 scripts\cameraController.cs" />
     <Compile Include="Assets\10 Video\movieController.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
