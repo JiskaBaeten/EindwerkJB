@@ -24,9 +24,14 @@ public class CameraControllerV3 : MonoBehaviour
   private MessageReadWrite arduinoScript = null;
   private string serialReadWriteTag = "serialReadWrite";
 
+  public Animator animationController;
+  private string beetleTag = "beetle";
+  private float speed = 0;
+
   void Start()
   {
     arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for aruinoscript
+    animationController = GameObject.FindWithTag(beetleTag).GetComponent<Animator>();
 
     //used to get the size from the ball from the playerController (read only)
     pc = player.GetComponent<PlayerController>();
@@ -57,6 +62,7 @@ public class CameraControllerV3 : MonoBehaviour
 
   void Update()
   {
+    //ZOOMCONTROLS
     if (Input.GetKeyDown(KeyCode.Z)) //to zoom out
     {
       StartCoroutine(ZoomCam(new Vector3(0, 1, -1), 2));
@@ -88,11 +94,14 @@ public class CameraControllerV3 : MonoBehaviour
   void LateUpdate()
   {
     //turn around the Y-axis
-    offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset; //if input is mouse
+      offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset; //if input is mouse
+      animationController.SetFloat("speedHori", Input.GetAxis("Mouse X"));
 
     if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) //if input from arrows
     {
       offset = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * turnSpeed, Vector3.up) * offset;
+      animationController.SetFloat("speedHori", Input.GetAxis("Horizontal"));
+      /// animationController.SetBool("LeftTurning", true);
     }
 
     if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Keypad6)) //if input from numkeys
@@ -110,6 +119,8 @@ public class CameraControllerV3 : MonoBehaviour
 
     transform.position = player.position + offset;
     transform.LookAt(player.position); //keep on looking where the player is
+
+    speed = 0;
   }
 
   //used for numpadkeys and arduino
@@ -125,7 +136,10 @@ public class CameraControllerV3 : MonoBehaviour
     else if (whichInput == "keyPad") //input is keypad
     { extraSpeed = 1f; }
 
+    speed = 1;
     offset = Quaternion.AngleAxis(-turnSpeed * extraSpeed, Vector3.up) * offset;
+    animationController.SetFloat("speedHori", speed);
+    //animationController.SetBool("LeftTurning", true);
   }
 
   void TurnRight(string whichInput)
@@ -141,6 +155,9 @@ public class CameraControllerV3 : MonoBehaviour
     { extraSpeed = 1f; }
 
     offset = Quaternion.AngleAxis(turnSpeed * extraSpeed, Vector3.up) * offset;
+    //animationController.SetBool("RightTurning", true);
+    speed = -1;
+    animationController.SetFloat("speedHori", speed);
   }
 
   public void ZoomOutOLD()
@@ -161,6 +178,9 @@ public class CameraControllerV3 : MonoBehaviour
       elapsedTime += Time.deltaTime;
       yield return 0;
     }
+
+    animationController.SetBool("LeftTurning", false);
+    animationController.SetBool("RightTurning", false);
   }
 
   public Vector3 OffsetCam

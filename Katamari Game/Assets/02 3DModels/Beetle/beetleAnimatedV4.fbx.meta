@@ -1,0 +1,789 @@
+fileFormatVersion: 2
+guid: f3eb4e508d2c07047b3206c339af87fe
+timeCreated: 1502196028
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: beetleModel
+    100004: beetleModel_MeshPart0
+    100006: beetleModel_MeshPart1
+    100008: belly
+    100010: chest
+    100012: head
+    100014: Joint_1
+    100016: Joint_2
+    100018: Joint_2_2
+    100020: Joint_3
+    100022: Joint_3_2
+    100024: Joint_4
+    100026: Joint_4_2
+    100028: Joint_5
+    100030: leftAnkle
+    100032: leftAnkle_Goal
+    100034: leftAntenna
+    100036: leftarm
+    100038: leftElbow
+    100040: leftFinger
+    100042: leftKnee
+    100044: leftleg
+    100046: leftToe
+    100048: leftUperElbow
+    100050: leftUpperArm
+    100052: LeftUpperFinger
+    100054: leftUpperWrist
+    100056: leftWrist
+    100058: link_antennae
+    100060: neck
+    100062: rightAnkle
+    100064: rightAnkle_Goal
+    100066: RightAntenna
+    100068: rightarm
+    100070: rightElbow
+    100072: rightfinger
+    100074: rightKnee
+    100076: rightleg
+    100078: rightleg_Pole
+    100080: rightToe
+    100082: rightUpperArm
+    100084: rightUpperElbow
+    100086: RightUpperFinger
+    100088: RightUpperWrist
+    100090: rightwrist
+    100092: spine
+    400000: //RootNode
+    400002: beetleModel
+    400004: beetleModel_MeshPart0
+    400006: beetleModel_MeshPart1
+    400008: belly
+    400010: chest
+    400012: head
+    400014: Joint_1
+    400016: Joint_2
+    400018: Joint_2_2
+    400020: Joint_3
+    400022: Joint_3_2
+    400024: Joint_4
+    400026: Joint_4_2
+    400028: Joint_5
+    400030: leftAnkle
+    400032: leftAnkle_Goal
+    400034: leftAntenna
+    400036: leftarm
+    400038: leftElbow
+    400040: leftFinger
+    400042: leftKnee
+    400044: leftleg
+    400046: leftToe
+    400048: leftUperElbow
+    400050: leftUpperArm
+    400052: LeftUpperFinger
+    400054: leftUpperWrist
+    400056: leftWrist
+    400058: link_antennae
+    400060: neck
+    400062: rightAnkle
+    400064: rightAnkle_Goal
+    400066: RightAntenna
+    400068: rightarm
+    400070: rightElbow
+    400072: rightfinger
+    400074: rightKnee
+    400076: rightleg
+    400078: rightleg_Pole
+    400080: rightToe
+    400082: rightUpperArm
+    400084: rightUpperElbow
+    400086: RightUpperFinger
+    400088: RightUpperWrist
+    400090: rightwrist
+    400092: spine
+    4300000: beetleModel_MeshPart0
+    4300002: beetleModel_MeshPart1
+    7400000: Forward Run
+    7400002: Backwards Run
+    7400004: TurnLeft
+    7400006: TurnRight
+    7400008: Idle
+    9500000: //RootNode
+    13700000: beetleModel_MeshPart0
+    13700002: beetleModel_MeshPart1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Forward Run
+      takeName: CINEMA_4D_Main
+      firstFrame: 7
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: beetleModel
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart0
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart1
+        weight: 1
+      - path: beetleModel/spine
+        weight: 1
+      - path: beetleModel/spine/belly
+        weight: 1
+      - path: beetleModel/spine/belly/chest
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist/LeftUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/head
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4/Joint_5
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2/Joint_4_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist/RightUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist/leftFinger
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist/rightfinger
+        weight: 1
+      - path: beetleModel/spine/leftleg
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle/leftToe
+        weight: 1
+      - path: beetleModel/spine/rightleg
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle/rightToe
+        weight: 1
+      - path: beetleModel/spine/rightleg_Pole
+        weight: 1
+      - path: leftAnkle_Goal
+        weight: 1
+      - path: rightAnkle_Goal
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Backwards Run
+      takeName: CINEMA_4D_Main
+      firstFrame: 7
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: beetleModel
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart0
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart1
+        weight: 1
+      - path: beetleModel/spine
+        weight: 1
+      - path: beetleModel/spine/belly
+        weight: 1
+      - path: beetleModel/spine/belly/chest
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist/LeftUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/head
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4/Joint_5
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2/Joint_4_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist/RightUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist/leftFinger
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist/rightfinger
+        weight: 1
+      - path: beetleModel/spine/leftleg
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle/leftToe
+        weight: 1
+      - path: beetleModel/spine/rightleg
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle/rightToe
+        weight: 1
+      - path: beetleModel/spine/rightleg_Pole
+        weight: 1
+      - path: leftAnkle_Goal
+        weight: 1
+      - path: rightAnkle_Goal
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: TurnLeft
+      takeName: CINEMA_4D_Main
+      firstFrame: 45
+      lastFrame: 68
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: beetleModel
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart0
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart1
+        weight: 1
+      - path: beetleModel/spine
+        weight: 1
+      - path: beetleModel/spine/belly
+        weight: 1
+      - path: beetleModel/spine/belly/chest
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist/LeftUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/head
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4/Joint_5
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2/Joint_4_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist/RightUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist/leftFinger
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist/rightfinger
+        weight: 1
+      - path: beetleModel/spine/leftleg
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle/leftToe
+        weight: 1
+      - path: beetleModel/spine/rightleg
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle/rightToe
+        weight: 1
+      - path: beetleModel/spine/rightleg_Pole
+        weight: 1
+      - path: leftAnkle_Goal
+        weight: 1
+      - path: rightAnkle_Goal
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: TurnRight
+      takeName: CINEMA_4D_Main
+      firstFrame: 75
+      lastFrame: 98
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: beetleModel
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart0
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart1
+        weight: 1
+      - path: beetleModel/spine
+        weight: 1
+      - path: beetleModel/spine/belly
+        weight: 1
+      - path: beetleModel/spine/belly/chest
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist/LeftUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/head
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4/Joint_5
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2/Joint_4_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist/RightUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist/leftFinger
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist/rightfinger
+        weight: 1
+      - path: beetleModel/spine/leftleg
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle/leftToe
+        weight: 1
+      - path: beetleModel/spine/rightleg
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle/rightToe
+        weight: 1
+      - path: beetleModel/spine/rightleg_Pole
+        weight: 1
+      - path: leftAnkle_Goal
+        weight: 1
+      - path: rightAnkle_Goal
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: CINEMA_4D_Main
+      firstFrame: 4
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: beetleModel
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart0
+        weight: 1
+      - path: beetleModel/beetleModel_MeshPart1
+        weight: 1
+      - path: beetleModel/spine
+        weight: 1
+      - path: beetleModel/spine/belly
+        weight: 1
+      - path: beetleModel/spine/belly/chest
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/leftUpperArm/leftUperElbow/leftUpperWrist/LeftUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/head
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/leftAntenna/Joint_2/Joint_3/Joint_4/Joint_5
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/neck/link_antennae/RightAntenna/Joint_1/Joint_2_2/Joint_3_2/Joint_4_2
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist
+        weight: 1
+      - path: beetleModel/spine/belly/chest/rightUpperArm/rightUpperElbow/RightUpperWrist/RightUpperFinger
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist
+        weight: 1
+      - path: beetleModel/spine/belly/leftarm/leftElbow/leftWrist/leftFinger
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist
+        weight: 1
+      - path: beetleModel/spine/belly/rightarm/rightElbow/rightwrist/rightfinger
+        weight: 1
+      - path: beetleModel/spine/leftleg
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle
+        weight: 1
+      - path: beetleModel/spine/leftleg/leftKnee/leftAnkle/leftToe
+        weight: 1
+      - path: beetleModel/spine/rightleg
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle
+        weight: 1
+      - path: beetleModel/spine/rightleg/rightKnee/rightAnkle/rightToe
+        weight: 1
+      - path: beetleModel/spine/rightleg_Pole
+        weight: 1
+      - path: leftAnkle_Goal
+        weight: 1
+      - path: rightAnkle_Goal
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

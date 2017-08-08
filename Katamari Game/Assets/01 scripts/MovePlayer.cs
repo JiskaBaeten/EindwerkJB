@@ -14,9 +14,19 @@ public class MovePlayer : MonoBehaviour
   private MessageReadWrite arduinoScript = null;
   private string serialReadWriteTag = "serialReadWrite";
 
+  public Animator animationController;
+  private string beetleTag = "beetle";
+  float speed = 0;
+
   void Start()
   {
     arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for aruinoscript
+    animationController = GameObject.FindWithTag(beetleTag).GetComponent<Animator>();
+  }
+
+  private void Update()
+  {
+    speed = 0;
   }
 
   void FixedUpdate()
@@ -24,17 +34,35 @@ public class MovePlayer : MonoBehaviour
     //always roll into the direction the cam is facing (mainCam.transform.forward)
     if (Input.GetAxis("Mouse Y") > 0 || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Keypad8)) //forward
     {
+      speed = 1;
+      animationController.SetFloat("speed", speed);
+     // animationController.SetTrigger("Forwards");
       MoveForward("other");
     }
     if (Input.GetAxis("Mouse Y") < 0 || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.Keypad2)) //backward
     {
+      speed = -1;
+      animationController.SetFloat("speed", speed);
+     // animationController.SetTrigger("Backwards");
       MoveBackward("other");
     }
 
     if (arduinoScript != null) //when the script was found
     { //input from arduino
-      if (arduinoScript.enc1TurnLeft == true) { MoveForward("arduino");  }
-      else if (arduinoScript.enc1TurnLeft == false) { MoveBackward("arduino"); }
+      if (arduinoScript.enc1TurnLeft == true)
+      {
+        speed = 1;
+        animationController.SetFloat("speed", speed);
+       // animationController.SetTrigger("Forwards");
+        MoveForward("arduino");
+      }
+      else if (arduinoScript.enc1TurnLeft == false)
+      {
+        speed = -1;
+        animationController.SetFloat("speed", speed);
+       /// animationController.SetTrigger("Backwards");
+        MoveBackward("arduino");
+      }
       else { } //when null (since it's a nullable bool, do nothing
     }
   }
