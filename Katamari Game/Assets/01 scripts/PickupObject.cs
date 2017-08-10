@@ -28,12 +28,25 @@ public class PickupObject : MonoBehaviour
     {
       imSmaller = true;
       if (pickup.gameObject.GetComponent<MeshCollider>() != null) //when it has a mesh collider
-      { 
-        pickup.gameObject.GetComponent<MeshCollider>().isTrigger = true; //turn on the trigger for the mesh
+      {
+        foreach (MeshCollider c in GetComponents<MeshCollider>())
+        {
+          c.convex = true;
+          c.enabled = true; // turn the mesh collider on
+          c.isTrigger = true; //turn on the trigger for the mesh
+        }
 
         if (pickup.gameObject.GetComponent<BoxCollider>() != null)//if it has other colliders than the mesh, turn all other colliders off
         { 
           foreach (Collider c in GetComponents<BoxCollider>())
+          {
+            c.enabled = false;
+          }
+        }
+
+        if(pickup.gameObject.GetComponent<SphereCollider>() != null)//if it has other colliders than the mesh, turn all other colliders off
+        {
+          foreach (Collider c in GetComponents<SphereCollider>())
           {
             c.enabled = false;
           }

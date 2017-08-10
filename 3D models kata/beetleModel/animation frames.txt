@@ -1,0 +1,3 @@
+*wandel tussen 7 - 30 frames
+*draaien links tussen 45-68
+*draaien rechts tussen 75 -98

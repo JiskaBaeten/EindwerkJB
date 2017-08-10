@@ -101,7 +101,6 @@ public class CameraControllerV3 : MonoBehaviour
     {
       offset = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * turnSpeed, Vector3.up) * offset;
       animationController.SetFloat("speedHori", Input.GetAxis("Horizontal"));
-      /// animationController.SetBool("LeftTurning", true);
     }
 
     if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.Keypad6)) //if input from numkeys
@@ -114,7 +113,13 @@ public class CameraControllerV3 : MonoBehaviour
     { //input from arduino
       if (arduinoScript.enc2TurnLeft == true) { TurnLeft("arduino"); }
       else if (arduinoScript.enc2TurnLeft == false) { TurnRight("arduino"); }
-      else { }; //when bool = null
+      else {
+        if (Input.GetAxis("Mouse X") == 0 && Input.GetKey(KeyCode.LeftArrow) == false && Input.GetKey(KeyCode.Keypad4) == false && Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.Keypad6) == false)
+        {
+          speed = 0;
+          animationController.SetFloat("speed", speed);
+        }
+      }; //when bool = null
     }
 
     transform.position = player.position + offset;
@@ -139,7 +144,6 @@ public class CameraControllerV3 : MonoBehaviour
     speed = 1;
     offset = Quaternion.AngleAxis(-turnSpeed * extraSpeed, Vector3.up) * offset;
     animationController.SetFloat("speedHori", speed);
-    //animationController.SetBool("LeftTurning", true);
   }
 
   void TurnRight(string whichInput)
@@ -155,7 +159,6 @@ public class CameraControllerV3 : MonoBehaviour
     { extraSpeed = 1f; }
 
     offset = Quaternion.AngleAxis(turnSpeed * extraSpeed, Vector3.up) * offset;
-    //animationController.SetBool("RightTurning", true);
     speed = -1;
     animationController.SetFloat("speedHori", speed);
   }
@@ -178,9 +181,6 @@ public class CameraControllerV3 : MonoBehaviour
       elapsedTime += Time.deltaTime;
       yield return 0;
     }
-
-    animationController.SetBool("LeftTurning", false);
-    animationController.SetBool("RightTurning", false);
   }
 
   public Vector3 OffsetCam

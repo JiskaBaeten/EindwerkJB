@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
       pickupArray.Add(pickup.gameObject);
       audioRolledUp = pickup.gameObject.GetComponent<AudioSource>(); //load in pickupSound
       isFirstPickedUp = true;
-      Debug.Log(pickup.name);
 
       if (pickup.transform.childCount > 0)
       pickup.transform.GetChild(0).gameObject.SetActive(false);
