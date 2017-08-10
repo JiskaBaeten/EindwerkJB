@@ -17,6 +17,11 @@ public class PickupObject : MonoBehaviour
     pickup = this.gameObject;
     //pickup.gameObject.tag = "PickUp"; //put this tag onto the object the script is hanging onto -> do this manualy
     volumePickup = pickup.transform.localScale.x * pickup.transform.localScale.y * pickup.transform.localScale.z;
+    if (pickup.name == "DrinkingCanPrefab")
+    {
+      Debug.Log("can: "+ volumePickup);
+      Debug.Log("Ball: " + ((playerObject.transform.localScale.x / 2f) * (playerObject.transform.localScale.x / 2f) * (playerObject.transform.localScale.x / 2f)) * 3.14f * (4 / 3));
+    }
   }
 
   void Update()
