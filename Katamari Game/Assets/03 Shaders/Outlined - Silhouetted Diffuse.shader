@@ -10,7 +10,8 @@
 Shader "Outlined/Silhouetted Bumped Diffuse" {
 	Properties{
 		_Color("Main Color", Color) = (0,0,0,1) //always takes the original color of the default shader anyway
-		_OutlineColor("Outline Color", Color) = (0.255, 0.2, 0.651, 1) //RGB values divided by 255 to make it normalized
+		//_OutlineColor("Outline Color", Color) = (0.255, 0.2, 0.651, 1) //RGB values divided by 255 to make it normalized BLUE
+		_OutlineColor("Outline Color", Color) = (0.937, 0.776, 0.188, 1) //RGB values divided by 255 to make it normalized YELLOW
 		_Outline("Outline width", Range(0.0, 3)) = .5 // set how far the max outline may be from original object
 		_Size("Outline Thickness", Float) = 1.1
 		_MainTex("Base (RGB)", 2D) = "white" { }
