@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
   public float scaleToCm = 100.0f; //to give the player a realistic number to work with
   private Vector3 ballSize;
   private Vector3 upSize;
-  private byte growSize = 6; //so it grows not too fast (1/3 of the object in every direction)
+  private byte growSize = 15; //so it grows not too fast 
 
   //variables for picking up objects
   public GameObject pickupHolder;

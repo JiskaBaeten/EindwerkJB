@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 7c565054c4ebed945be6548ca3bf434e
+timeCreated: 1502542658
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: apple
+    100002: BananaPeel
+    100004: BlackAnt
+    100006: blanket
+    100008: bread
+    100010: eye
+    100012: eye_2
+    100014: eye_3
+    100016: eye_4
+    100018: MiddleLeg
+    100020: MiddleLeg_2
+    100022: //RootNode
+    100024: picNic
+    100026: picNicBasket
+    100028: plate
+    100030: RedAnt
+    400000: apple
+    400002: BananaPeel
+    400004: BlackAnt
+    400006: blanket
+    400008: bread
+    400010: eye
+    400012: eye_2
+    400014: eye_3
+    400016: eye_4
+    400018: MiddleLeg
+    400020: MiddleLeg_2
+    400022: //RootNode
+    400024: picNic
+    400026: picNicBasket
+    400028: plate
+    400030: RedAnt
+    2300000: apple
+    2300002: BananaPeel
+    2300004: blanket
+    2300006: bread
+    2300008: eye
+    2300010: eye_2
+    2300012: eye_3
+    2300014: eye_4
+    2300016: MiddleLeg
+    2300018: MiddleLeg_2
+    2300020: picNicBasket
+    2300022: plate
+    3300000: apple
+    3300002: BananaPeel
+    3300004: blanket
+    3300006: bread
+    3300008: eye
+    3300010: eye_2
+    3300012: eye_3
+    3300014: eye_4
+    3300016: MiddleLeg
+    3300018: MiddleLeg_2
+    3300020: picNicBasket
+    3300022: plate
+    4300000: bread
+    4300002: plate
+    4300004: apple
+    4300006: BananaPeel
+    4300008: blanket
+    4300010: picNicBasket
+    4300012: MiddleLeg
+    4300014: eye
+    4300016: eye_2
+    4300018: MiddleLeg_2
+    4300020: eye_3
+    4300022: eye_4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

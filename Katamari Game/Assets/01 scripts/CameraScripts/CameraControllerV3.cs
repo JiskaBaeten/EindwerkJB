@@ -6,20 +6,14 @@ using UnityEngine.SceneManagement;
 public class CameraControllerV3 : MonoBehaviour
 {
   //orbit the camera around the player
-  //add numbers to zoomnumbers!!!!!
-  // add diffrent offsets for diffrent scenes!
 
   private float turnSpeed = 4.0f;
   public Transform player;
 
-  private Vector3 offset; //STILL NEED TO FINETUNE THESE ******
-  private float offsetY = 0.5f;
-  private float offsetZ = 5.0f;
+  private Vector3 offset;
 
   private PlayerController pc = null;
   private Vector3 ballSize = Vector3.zero;
-
- // private List<float> zoomOutNumbers = new List<float>();
 
   private MessageReadWrite arduinoScript = null;
   private string serialReadWriteTag = "serialReadWrite";
@@ -30,34 +24,13 @@ public class CameraControllerV3 : MonoBehaviour
 
   void Start()
   {
-    arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for aruinoscript
+    arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for arduinoscript
     animationController = GameObject.FindWithTag(beetleTag).GetComponent<Animator>();
 
     //used to get the size from the ball from the playerController (read only)
     pc = player.GetComponent<PlayerController>();
 
-    if (SceneManager.GetActiveScene().name == "MenuScene")
-    {
-      offsetY = 0.2f;
-      offsetZ = 6.5f;
-    }
-    else if (SceneManager.GetActiveScene().name == "Lvl1ParkScene")
-    {
-      offsetY = 0.5f;
-      offsetZ = 5.0f;
-    }
-    else if (SceneManager.GetActiveScene().name == "TutorialScene")
-    {
-      offsetY = 0.5f;
-      offsetZ = 5.0f;
-    }
-
-    //beginoffset for the offset
-    offset = new Vector3(player.position.x, player.position.y + offsetY, player.position.z + offsetZ);
-
-    /*to get all the numbers so the cam knows when to zoom out --> not using this anymore****
-    zoomOutNumbers.Add(2.0f);
-    zoomOutNumbers.Add(4.0f);*/
+    offset = transform.position - player.transform.position;
   }
 
   void Update()
@@ -65,12 +38,12 @@ public class CameraControllerV3 : MonoBehaviour
     //ZOOMCONTROLS
     if (Input.GetKeyDown(KeyCode.Z)) //to zoom out
     {
-      StartCoroutine(ZoomCam(new Vector3(0, 1, -1), 2));
+      StartCoroutine(ZoomCam(new Vector3(0, 2, -2), 2));
     }
 
     if (Input.GetKeyDown(KeyCode.C)) //to zoom in
     {
-      StartCoroutine(ZoomCam(new Vector3(0, -1, 1), 2));
+      StartCoroutine(ZoomCam(new Vector3(0, -2, 2), 2));
     }
 
 
@@ -78,17 +51,6 @@ public class CameraControllerV3 : MonoBehaviour
     {
       ballSize = pc.SizeBall; //must be updated
     }
-
-
-    //not using this because the player can choose to zoom in or out
- /*   if (zoomOutNumbers.Count > 0) //only do this when list is not empty
-    {
-      if (zoomOutNumbers[0] <= ballSize.x) //if ball is too big, zoom out
-      {
-        zoomOutNumbers.RemoveAt(0); //remove current number
-        StartCoroutine(ZoomOut(new Vector3(0, 1, -1), 2));
-      }
-    }*/
   }
 
   void LateUpdate()
@@ -161,12 +123,6 @@ public class CameraControllerV3 : MonoBehaviour
     offset = Quaternion.AngleAxis(turnSpeed * extraSpeed, Vector3.up) * offset;
     speed = -1;
     animationController.SetFloat("speedHori", speed);
-  }
-
-  public void ZoomOutOLD()
-  {
-    //if ball gets too big for camera
-    offset += new Vector3(0, 1, -1);
   }
 
   IEnumerator ZoomCam(Vector3 endPos, float time) //slowly zoom out, and do this for x seconds
