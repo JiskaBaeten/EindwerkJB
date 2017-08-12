@@ -12,41 +12,32 @@ public class PickupObject : MonoBehaviour
   private bool imSmaller = false;
 
   private float ballVolume;
-  private SphereCollider spherecol;
 
   void Start()
   {
     playerObject = GameObject.FindGameObjectWithTag("Player");
-    spherecol = playerObject.GetComponent<SphereCollider>();
     pickup = this.gameObject;
     //pickup.gameObject.tag = "PickUp"; //put this tag onto the object the script is hanging onto -> do this manualy
     // volumePickup = pickup.transform.localScale.x * pickup.transform.localScale.y * pickup.transform.localScale.z;
 
     volumePickup = VolumeOfMesh(pickup.GetComponent<MeshFilter>().sharedMesh);
-
-    if (pickup.name == "Duck (11)")
-      Debug.Log(pickup.name + " " + volumePickup);
   }
 
   void Update()
   {
     //volume sphere:  4/3 * pi * r^3
     //divided by two since I only have the diametre and I need r
-    //so when the pickups are smaller than the ball
-    //if ((((4 / 3) * Mathf.PI * Mathf.Pow(playerObject.transform.localScale.y / 2f, 3))) > volumePickup)
     ballVolume = ((4 / 3) * Mathf.PI * Mathf.Pow(playerObject.transform.localScale.z / 2f, 3f));
-    if (Input.GetKeyDown(KeyCode.P))
-    { Debug.Log("ball  " + ballVolume); }
 
-    if (ballVolume > volumePickup)
+    if (ballVolume > volumePickup)    //so when the pickups are smaller than the ball
     {
 
       imSmaller = true;
       if (pickup.gameObject.GetComponent<MeshCollider>() != null) //when it has a mesh collider
       {
-        foreach (MeshCollider c in GetComponents<MeshCollider>())
+        foreach (MeshCollider c in GetComponents<MeshCollider>()) // just in case I forgot to delete a collider
         {
-          c.convex = true;
+          c.convex = true; // turn the mesh to convex -> so it can be triggered
           c.enabled = true; // turn the mesh collider on
           c.isTrigger = true; //turn on the trigger for the mesh
         }
@@ -104,6 +95,4 @@ public class PickupObject : MonoBehaviour
     }
     return volume *= this.gameObject.transform.localScale.x * this.gameObject.transform.localScale.y * this.gameObject.transform.localScale.z;
   }
-
-
 }

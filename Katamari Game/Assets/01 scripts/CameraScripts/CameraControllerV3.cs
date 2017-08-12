@@ -19,7 +19,7 @@ public class CameraControllerV3 : MonoBehaviour
   private PlayerController pc = null;
   private Vector3 ballSize = Vector3.zero;
 
-  private List<float> zoomOutNumbers = new List<float>();
+ // private List<float> zoomOutNumbers = new List<float>();
 
   private MessageReadWrite arduinoScript = null;
   private string serialReadWriteTag = "serialReadWrite";

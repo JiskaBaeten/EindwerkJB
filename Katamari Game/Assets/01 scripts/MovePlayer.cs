@@ -20,7 +20,7 @@ public class MovePlayer : MonoBehaviour
 
   void Start()
   {
-    arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for aruinoscript
+    arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for arduinoscript
     animationController = GameObject.FindWithTag(beetleTag).GetComponent<Animator>();
   }
 
