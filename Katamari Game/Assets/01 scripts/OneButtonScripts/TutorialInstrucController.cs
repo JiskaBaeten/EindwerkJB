@@ -25,7 +25,7 @@ public class TutorialInstrucController : MonoBehaviour
     instructionListController.Add("Roll ball backwards to move backwards");
     instructionListController.Add("Turn wheel left to turn left");
     instructionListController.Add("Turn wheel right to turn right");
-    instructionListButtons.Add("Check if something is smaller than you, \n by pressing SPACE");
+    instructionListController.Add("Check if something is smaller than you, \n by pressing SPACE");
   }
 
   void LateUpdate()
@@ -42,7 +42,6 @@ public class TutorialInstrucController : MonoBehaviour
       if (0 < counter)
         counter--;
     }
-
 
     if (connectionStatusText.text == "Connected")
       instructionText.text = instructionListController[counter];

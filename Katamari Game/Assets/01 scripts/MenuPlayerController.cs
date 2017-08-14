@@ -29,10 +29,13 @@ public class MenuPlayerController : MonoBehaviour
 
   private void Update()
   {
-    if (timerTime > 2)
-      warningPanel.SetActive(false);
+    if (comingSoonText.text == "Coming soon!")
+    {
+      if (timerTime > 2)
+        warningPanel.SetActive(false);
 
-    timerTime += Time.deltaTime;
+      timerTime += Time.deltaTime;
+    }
   }
 
   void OnTriggerEnter(Collider triggerLevels)//don't forget to turn trigger on!!

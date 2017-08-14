@@ -22,6 +22,8 @@ public class CameraControllerV3 : MonoBehaviour
   private string beetleTag = "beetle";
   private float speed = 0;
 
+  private int zoomNum = 0;
+
   void Start()
   {
     arduinoScript = GameObject.FindWithTag(serialReadWriteTag).GetComponent<MessageReadWrite>(); //look for arduinoscript
@@ -39,11 +41,16 @@ public class CameraControllerV3 : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Z)) //to zoom out
     {
       StartCoroutine(ZoomCam(new Vector3(0, 2, -2), 2));
+      zoomNum++;
     }
 
     if (Input.GetKeyDown(KeyCode.C)) //to zoom in
     {
-      StartCoroutine(ZoomCam(new Vector3(0, -2, 2), 2));
+      if (zoomNum > 0) // to make the user doesnt overzoom
+      {
+        StartCoroutine(ZoomCam(new Vector3(0, -2, 2), 2));
+        zoomNum--;
+      }
     }
 
 

@@ -95,4 +95,7 @@ public class PickupObject : MonoBehaviour
     }
     return volume *= this.gameObject.transform.localScale.x * this.gameObject.transform.localScale.y * this.gameObject.transform.localScale.z;
   }
+
+  public float GetVolumeOfPickup
+  { get { return volumePickup; } }
 }

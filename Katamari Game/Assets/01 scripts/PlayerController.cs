@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
   public float scaleToCm = 100.0f; //to give the player a realistic number to work with
   private Vector3 ballSize;
   private Vector3 upSize;
-  private byte growSize = 15; //so it grows not too fast 
+  private byte growSize = 5; //so it grows faster
+  private PickupObject po;
 
   //variables for picking up objects
   public GameObject pickupHolder;
@@ -42,7 +43,8 @@ public class PlayerController : MonoBehaviour
 
   void OnTriggerEnter(Collider pickup)
   {
-
+    po = pickup.GetComponent<PickupObject>();
+    float volumePickup = po.GetVolumeOfPickup;
     if (pickup.gameObject.tag == "PickUpWin") //check if it's a winning object first
     {
       winText.text = "You Win! \n Press space or left click to continue...";
@@ -53,6 +55,11 @@ public class PlayerController : MonoBehaviour
     {
       pickup.gameObject.GetComponent<Collider>().isTrigger = false;
       pickup.gameObject.GetComponent<Collider>().enabled = false;
+      if (pickup.gameObject.GetComponent<Rigidbody>() != null)
+      {
+        pickup.gameObject.GetComponent<Rigidbody>().useGravity = false;
+      }
+
       pickup.gameObject.tag = "StuckToBall";
       pickupArray.Add(pickup.gameObject);
       audioRolledUp = pickup.gameObject.GetComponent<AudioSource>(); //load in pickupSound
@@ -71,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
       LimitShownObjects();
 
-      SetGrowthSize(pickup.transform.localScale);
+      SetGrowthSize(volumePickup);
       pickup.gameObject.transform.parent = pickupHolder.transform;
 
       ballSize = ballSize + upSize;
@@ -88,14 +95,11 @@ public class PlayerController : MonoBehaviour
     SizeText.text = "Size: " + sizeForText.ToString("F2") + " cm";
   }
 
-  void SetGrowthSize(Vector3 pickup)
+  void SetGrowthSize(float pickupVolume)
   {
-    float average = new float();
-    average = (pickup.x + pickup.y + pickup.z) / 3;
-
-    upSize.x = (average / ballSize.x) / growSize;
-    upSize.y = (average / ballSize.y) / growSize;
-    upSize.z = (average / ballSize.z) / growSize;
+    upSize.x = (pickupVolume / ballSize.x) * growSize;
+    upSize.y = (pickupVolume / ballSize.y) * growSize;
+    upSize.z = (pickupVolume / ballSize.z) * growSize;
   }
 
   void LimitShownObjects()

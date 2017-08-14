@@ -30,7 +30,7 @@ public class ToggleOutlinePickups : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)) //toggle outline
+    if (Input.GetKeyUp(KeyCode.Space)) //toggle outline
     {
       outlineVisible = !outlineVisible;
     }

@@ -28,7 +28,6 @@ public class ResetHighscores : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.R))
     {
-      Debug.Log(warningText);
       warningPanel.SetActive(true);
       warningText.text = "Are you sure you want to reset \n ALL highscores? \n  Y or N";
       isWarningShowing = true;

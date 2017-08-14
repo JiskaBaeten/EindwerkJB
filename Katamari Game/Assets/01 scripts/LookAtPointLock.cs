@@ -9,10 +9,11 @@ public class LookAtPointLock : MonoBehaviour {
   public Transform camer;
 
   void Update () {
-    transform.position = new Vector3(playerTrans.position.x, transform.position.y, playerTrans.position.z);
-    //transform.position = new Vector3(playerTrans.position.x, playerTrans.position.y, playerTrans.position.z);
+    //position the lockposition at the bottomcenter of the ball
+    transform.position = new Vector3(playerTrans.position.x, playerTrans.position.y-playerTrans.localScale.y/2, playerTrans.position.z);
 
     //(2*tran.pos - cam.tran.pos) -> used to invert the lookat
-    transform.LookAt(new Vector3(2 * transform.position.x - camer.transform.position.x, 0, 2 * transform.position.z - camer.transform.position.z)); 
+    //    transform.LookAt(new Vector3(2 * transform.position.x - camer.transform.position.x, 0, 2 * transform.position.z - camer.transform.position.z)); 
+    transform.LookAt(new Vector3(2 * transform.position.x - camer.transform.position.x, 0, 2 * transform.position.z - camer.transform.position.z));
   }
 }

@@ -15,14 +15,14 @@ public class WinCheat : MonoBehaviour {
   void Update () {
     if (Input.GetKeyDown(KeyCode.W)) //make cube at position player to trigger a win situation
     {
-      playerPos = new Vector3(playerTransform.position.x, playerTransform.position.y + 0.5f, playerTransform.position.z);
+      playerPos = new Vector3(playerTransform.position.x, playerTransform.position.y + playerTransform.localScale.y / 2, playerTransform.position.z);
       playerRot = playerTransform.rotation;
       Instantiate(winCube, playerPos, playerRot); 
     }
 
     if (Input.GetKeyDown(KeyCode.X)) //just add cubes that make you grow
     {
-      playerPos = new Vector3(playerTransform.position.x, playerTransform.position.y + 0.5f, playerTransform.position.z);
+      playerPos = new Vector3(playerTransform.position.x, playerTransform.position.y+playerTransform.localScale.y/2, playerTransform.position.z);
       playerRot = playerTransform.rotation;
       Instantiate(addCube, playerPos, playerRot); 
     }

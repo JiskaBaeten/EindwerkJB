@@ -54,7 +54,7 @@ void loop()
       teller1--;
     }
       Serial.println("Encoder1: " + String(teller1));  //geformateerd in een string, wordt later toch opgevangen in unity
-      delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
+      delay(10); //5 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
     }
 
   //Rotary tussen 2A & 2B
@@ -62,17 +62,17 @@ void loop()
   {
     BOOLROTPIN2A=false; //reset voor de volgende keer
     //lees hier de pin 2B om te zien of je moet optellen of aftellen
-    //Linksom is positief, rechtsom is negatief
+    //Linksom is negatief, rechtsom is positief
     if(digitalRead(ROTARYINPUTPIN2B)) //meet of pin 2B hoog of laag is
-    {
-      teller2++;
-    }
-    else
     {
       teller2--;
     }
+    else
+    {
+      teller2++;
+    }
       Serial.println("Encoder2: " + String(teller2)); //geformateerd in een string, wordt later toch opgevangen in unity
-      delay(10); //10 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
+      delay(5); //5 ms delay voor de ontdendering van de encoder (anders teveel metingen na elkaar) en voor kleine draaibewegingen
   }
 
   if (teller1 <= -9223372036854775000 || teller1 >= 9223372036854775000) //om het maximum en minimum van de long teller op te vangen mocht het spel veel aan 1 stuk gespeeld worden (beetje kleiner getal om overloading op te vangen)

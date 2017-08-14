@@ -30,34 +30,40 @@ public class MessageReadWrite : MonoBehaviour
 
   void Update()
   {
-    //recieve data
-    recievedData = serialController.ReadSerialMessage(); //read in serialPort from Arduino
-    if (recievedData == null) return; //if no message, stop here
+    if (serialController != null)
+    {
+      //recieve data
+      recievedData = serialController.ReadSerialMessage(); //read in serialPort from Arduino
+      if (recievedData == null)
+      {
+        enc1TurnLeft = null;
+        enc2TurnLeft = null;
+      } //return; //if no message, stop here
+      else if (recievedData.StartsWith(enc1)) //the first encoder send a message
+      {
+        CheckLeftOrRight(enc1);
+      }
+      else if (recievedData.StartsWith(enc2)) //the second encoder send a message
+      {
+        CheckLeftOrRight(enc2);
+      }
 
-    if (recievedData.StartsWith(enc1)) //the first encoder send a message
-    {
-      CheckLeftOrRight(enc1);
-    }
-    else if (recievedData.StartsWith(enc2)) //the second encoder send a message
-    {
-      CheckLeftOrRight(enc2);
-    }
+      // Check if the message is plain data or a connect/disconnect event.
+      if (ReferenceEquals(recievedData, SerialController.SERIAL_DEVICE_CONNECTED))
+      {
+       // Debug.Log("Connection established");
+        connectedToArduino = true;
+      }
+      else if (ReferenceEquals(recievedData, SerialController.SERIAL_DEVICE_DISCONNECTED))
+      {
+        // Debug.Log("Connection attempt failed or disconnection detected");
+        connectedToArduino = false;
+      }
+      else
+       // Debug.Log("Message arrived: " + recievedData);
 
-    // Check if the message is plain data or a connect/disconnect event.
-    if (ReferenceEquals(recievedData, SerialController.SERIAL_DEVICE_CONNECTED))
-    {
-      Debug.Log("Connection established");
-      connectedToArduino = true;
+      UpdateConnectionText(connectedToArduino);
     }
-    else if (ReferenceEquals(recievedData, SerialController.SERIAL_DEVICE_DISCONNECTED))
-    {
-     // Debug.Log("Connection attempt failed or disconnection detected");
-      connectedToArduino = false;
-    }
-    else
-      Debug.Log("Message arrived: " + recievedData);
-
-    UpdateConnectionText(connectedToArduino);
   }
 
   void CheckLeftOrRight(string whichEncoder)
