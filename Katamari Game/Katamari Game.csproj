@@ -83,6 +83,7 @@
     <Compile Include="Assets\01 scripts\CameraScripts\MiniMapCamController.cs" />
     <Compile Include="Assets\01 scripts\CameraScripts\cameraController.cs" />
     <Compile Include="Assets\01 scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\01 scripts\GetOutofJitter.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\LoadHighscore.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\ResetHighscores.cs" />
     <Compile Include="Assets\01 scripts\HighscoreScripts\SaveHighscore.cs" />

@@ -65,11 +65,13 @@ public class MovePlayer : MonoBehaviour
 
     if (whichInput == "arduino")
     {
-      extraSpeed = 10f;
+      //extraSpeed = 10f;
+      extraSpeed = 2f;
       arduinoScript.enc1TurnLeft = null; //to make sure that the bool is reset
     }
     else if (whichInput == "other") //if it's not arduino
-    { extraSpeed = 1.5f; }
+   // { extraSpeed = 1.5f; }
+    { extraSpeed = 1f; }
 
     playerRigidBody.AddForce(mainCamera.transform.forward * extraSpeed * moveSpeed * Time.deltaTime);
     speed = 1;
@@ -83,7 +85,8 @@ public class MovePlayer : MonoBehaviour
     if (whichInput == "arduino")
     {
       arduinoScript.enc1TurnLeft = null; //to make sure that the bool is reset
-      extraSpeed = 5f;
+      //extraSpeed = 5f;
+      extraSpeed = 2f;
     }
     else if (whichInput == "other") //if it's not arduino
     { extraSpeed = 1f; }

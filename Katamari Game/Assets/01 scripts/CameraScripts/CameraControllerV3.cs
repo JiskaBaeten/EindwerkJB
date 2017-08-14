@@ -40,7 +40,7 @@ public class CameraControllerV3 : MonoBehaviour
     //ZOOMCONTROLS
     if (Input.GetKeyDown(KeyCode.Z)) //to zoom out
     {
-      StartCoroutine(ZoomCam(new Vector3(0, 2, -5), 2));
+      StartCoroutine(ZoomCam(new Vector3(0, 1, -2.5f), 2));
       zoomNum++;
     }
 
@@ -48,7 +48,7 @@ public class CameraControllerV3 : MonoBehaviour
     {
       if (zoomNum > 0) // to make the user doesnt overzoom
       {
-        StartCoroutine(ZoomCam(new Vector3(0, -2, 5), 2));
+        StartCoroutine(ZoomCam(new Vector3(0, -1, 2.5f), 2));
         zoomNum--;
       }
     }
@@ -68,7 +68,7 @@ public class CameraControllerV3 : MonoBehaviour
 
     if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) //if input from arrows
     {
-      offset = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * turnSpeed, Vector3.up) * offset;
+      offset = Quaternion.AngleAxis(Input.GetAxis("Horizontal") * turnSpeed/2, Vector3.up) * offset;
       animationController.SetFloat("speedHori", Input.GetAxis("Horizontal"));
     }
 
@@ -108,7 +108,7 @@ public class CameraControllerV3 : MonoBehaviour
       extraSpeed = 5f;
     }
     else if (whichInput == "keyPad") //input is keypad
-    { extraSpeed = 1f; }
+    { extraSpeed = 0.3f; }
 
     speed = 1;
     offset = Quaternion.AngleAxis(-turnSpeed * extraSpeed, Vector3.up) * offset;
@@ -125,7 +125,7 @@ public class CameraControllerV3 : MonoBehaviour
       extraSpeed = 5f;
     }
     else if (whichInput == "keyPad") //input is keypad
-    { extraSpeed = 1f; }
+    { extraSpeed = 0.3f; }
 
     offset = Quaternion.AngleAxis(turnSpeed * extraSpeed, Vector3.up) * offset;
     speed = -1;
