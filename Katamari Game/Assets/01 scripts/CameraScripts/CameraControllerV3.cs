@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -40,15 +40,15 @@ public class CameraControllerV3 : MonoBehaviour
     //ZOOMCONTROLS
     if (Input.GetKeyDown(KeyCode.Z)) //to zoom out
     {
-      StartCoroutine(ZoomCam(new Vector3(0, 2, -2), 2));
+      StartCoroutine(ZoomCam(new Vector3(0, 2, -5), 2));
       zoomNum++;
     }
 
-    if (Input.GetKeyDown(KeyCode.C)) //to zoom in
+    if (Input.GetKeyDown(KeyCode.E)) //to zoom in
     {
       if (zoomNum > 0) // to make the user doesnt overzoom
       {
-        StartCoroutine(ZoomCam(new Vector3(0, -2, 2), 2));
+        StartCoroutine(ZoomCam(new Vector3(0, -2, 5), 2));
         zoomNum--;
       }
     }
