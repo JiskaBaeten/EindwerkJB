@@ -23,7 +23,7 @@ public class MiniMapCamController : MonoBehaviour
     //ZOOMCONTROLS
     if (Input.GetKeyDown(KeyCode.Z)) //to zoom out
     {
-      StartCoroutine(ZoomCam(new Vector3(0, 4, 0), 2));
+      StartCoroutine(ZoomCam(new Vector3(0, 4, 0), 1));
       zoomNum++;
     }
 
@@ -31,7 +31,7 @@ public class MiniMapCamController : MonoBehaviour
     {
       if (zoomNum > 0) // to make the user doesnt overzoom
       { 
-        StartCoroutine(ZoomCam(new Vector3(0, -4, 0), 2));
+        StartCoroutine(ZoomCam(new Vector3(0, -4, 0), 1));
         zoomNum--;
       }
     }

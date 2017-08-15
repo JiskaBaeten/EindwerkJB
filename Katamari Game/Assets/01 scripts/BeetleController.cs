@@ -10,8 +10,8 @@ public class BeetleController : MonoBehaviour
   public Transform player;
 
   private Vector3 offset; //STILL NEED TO FINETUNE THESE ******
-  private float offsetY = 0.5f;
-  private float offsetZ = 5.0f;
+ // private float offsetY = 0.5f;
+ // private float offsetZ = 5.0f;
 
   private PlayerController pc = null;
   private Vector3 ballSize = Vector3.zero;

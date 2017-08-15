@@ -40,7 +40,7 @@ public class CameraControllerV3 : MonoBehaviour
     //ZOOMCONTROLS
     if (Input.GetKeyDown(KeyCode.Z)) //to zoom out
     {
-      StartCoroutine(ZoomCam(new Vector3(0, 1, -2.5f), 2));
+      StartCoroutine(ZoomCam(new Vector3(0, 0.5f, -2f), 1));
       zoomNum++;
     }
 
@@ -48,7 +48,7 @@ public class CameraControllerV3 : MonoBehaviour
     {
       if (zoomNum > 0) // to make the user doesnt overzoom
       {
-        StartCoroutine(ZoomCam(new Vector3(0, -1, 2.5f), 2));
+        StartCoroutine(ZoomCam(new Vector3(0, -0.5f, 2f), 1));
         zoomNum--;
       }
     }
@@ -105,7 +105,7 @@ public class CameraControllerV3 : MonoBehaviour
     if (whichInput == "arduino")
     {
       arduinoScript.enc2TurnLeft = null; //to make sure that the bool is reset
-      extraSpeed = 5f;
+      extraSpeed = 1f;
     }
     else if (whichInput == "keyPad") //input is keypad
     { extraSpeed = 0.3f; }
@@ -122,7 +122,7 @@ public class CameraControllerV3 : MonoBehaviour
     if (whichInput == "arduino")
     {
       arduinoScript.enc2TurnLeft = null; //to make sure that the bool is reset
-      extraSpeed = 5f;
+      extraSpeed = 1f;
     }
     else if (whichInput == "keyPad") //input is keypad
     { extraSpeed = 0.3f; }

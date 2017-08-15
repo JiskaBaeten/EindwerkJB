@@ -12,7 +12,7 @@ public class LoadHighscore : MonoBehaviour
   public TextMesh lvl3Mesh;
 
   private float defaultMaxTime = 3600f;
-  private string lvl1Name = "testScene"; //change this name when the official scene is made!!
+  private string lvl1Name = "Lvl1ParkScene"; //change this name when the official scene is made!!
   private string lvl2Name = "streetScene";
   private string lvl3Name = "worldScene";
 
